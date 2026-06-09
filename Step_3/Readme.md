@@ -1,0 +1,1 @@
+### Step 3 stuff here which is the linear stitch of GSM8K from the 9B model to the 2B one. Gives us what is probably our most clean cut evidence that capability cannot be transfered but that the geometry is similar enough to where it can be reconstructed
