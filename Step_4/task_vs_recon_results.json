@@ -1,0 +1,41 @@
+{
+  "recon_cos": {
+    "recon": 0.9419560432434082,
+    "task": 0.2827105224132538
+  },
+  "probe_first_digit_acc": 0.887499988079071,
+  "bins": {
+    "mul_unsolv": {
+      "native": 0.0,
+      "recon": 0.5238095238095238,
+      "task": 0.7619047619047619,
+      "task_shuf": 0.0
+    },
+    "mul_solv": {
+      "native": 1.0,
+      "recon": 0.9504716981132075,
+      "task": 0.9764150943396226,
+      "task_shuf": 0.18160377358490565
+    },
+    "muladd_solv": {
+      "native": 1.0,
+      "recon": 0.8590308370044053,
+      "task": 0.8986784140969163,
+      "task_shuf": 0.18502202643171806
+    },
+    "muladd_unsolv": {
+      "native": 0.0,
+      "recon": 0.3984375,
+      "task": 0.8828125,
+      "task_shuf": 0.1015625
+    }
+  },
+  "counts": {
+    "mul_unsolv": 21,
+    "mul_solv": 424,
+    "muladd_solv": 227,
+    "muladd_unsolv": 128
+  },
+  "L2": 20,
+  "L9_DONOR": 34
+}
