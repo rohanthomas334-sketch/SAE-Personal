@@ -1,0 +1,90 @@
+{
+  "fullseq_shared_map": {
+    "n_unsolv": 626,
+    "fullseq_epochs": 6,
+    "fullseq_linear_recon_cos": "0.262 [0.260, 0.265]",
+    "fullseq_linear_first": "0.304 [0.269, 0.341]",
+    "fullseq_linear_full": "0.304 [0.269, 0.341]",
+    "fullseq_mlp_first": "0.369 [0.332, 0.408]",
+    "fullseq_mlp_full": "0.367 [0.331, 0.406]",
+    "_ref_task_map_first(first-token-trained)": "0.278 [0.244, 0.314]",
+    "_ref_task_map_full(first-token-trained)": "0.278 [0.244, 0.314]",
+    "_ref_donor_own_full": "1.000 [0.994, 1.000]",
+    "_ref_native_solv_full(recipient completion ceiling)": "1.000 [0.806, 1.000]"
+  },
+  "digit_position_probes": {
+    "digit1": {
+      "n": 642,
+      "majority_baseline": 0.349,
+      "donor_X9e": "0.701 [0.649, 0.748]",
+      "native_X2e": "0.673 [0.620, 0.722]",
+      "task_map_out": "0.679 [0.626, 0.728]",
+      "fullseq_map_out": "0.676 [0.623, 0.725]"
+    },
+    "digit2": {
+      "n": 642,
+      "majority_baseline": 0.121,
+      "donor_X9e": "0.153 [0.117, 0.196]",
+      "native_X2e": "0.109 [0.079, 0.148]",
+      "task_map_out": "0.140 [0.106, 0.182]",
+      "fullseq_map_out": "0.150 [0.115, 0.193]"
+    },
+    "digit3": {
+      "n": 642,
+      "majority_baseline": 0.131,
+      "donor_X9e": "0.461 [0.407, 0.516]",
+      "native_X2e": "0.396 [0.344, 0.450]",
+      "task_map_out": "0.461 [0.407, 0.516]",
+      "fullseq_map_out": "0.458 [0.404, 0.513]"
+    }
+  },
+  "inlp_erasure": {
+    "chance_majority_baseline": 0.358,
+    "converged": true,
+    "task_first_unerased_reference": "0.278 [0.244, 0.314]",
+    "curve": {
+      "round1": {
+        "rank_removed": 9,
+        "probe_acc_erased": 0.882,
+        "confer_first_erased": "0.224 [0.193, 0.258]",
+        "confer_first_random_rank": "0.288 [0.253, 0.324]"
+      },
+      "round2": {
+        "rank_removed": 18,
+        "probe_acc_erased": 0.835,
+        "confer_first_erased": "0.190 [0.161, 0.223]",
+        "confer_first_random_rank": "0.288 [0.253, 0.324]"
+      },
+      "round5": {
+        "rank_removed": 45,
+        "probe_acc_erased": 0.725,
+        "confer_first_erased": "0.161 [0.135, 0.192]",
+        "confer_first_random_rank": "0.273 [0.240, 0.309]"
+      },
+      "round10": {
+        "rank_removed": 90,
+        "probe_acc_erased": 0.553,
+        "confer_first_erased": "0.136 [0.111, 0.165]",
+        "confer_first_random_rank": "0.280 [0.246, 0.316]"
+      },
+      "round20": {
+        "rank_removed": 180,
+        "probe_acc_erased": 0.468,
+        "confer_first_erased": "0.110 [0.088, 0.137]",
+        "confer_first_random_rank": "0.268 [0.235, 0.304]"
+      },
+      "round30": {
+        "rank_removed": 270,
+        "probe_acc_erased": 0.404,
+        "confer_first_erased": "0.075 [0.057, 0.098]",
+        "confer_first_random_rank": "0.281 [0.247, 0.318]"
+      },
+      "round36": {
+        "rank_removed": 324,
+        "probe_acc_erased": 0.375,
+        "confer_first_erased": "0.070 [0.053, 0.093]",
+        "confer_first_random_rank": "0.284 [0.250, 0.321]"
+      }
+    }
+  }
+}
