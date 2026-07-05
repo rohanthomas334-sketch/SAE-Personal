@@ -1,0 +1,196 @@
+{
+  "patching": {
+    "n_used_2b": 168,
+    "n_used_9b": 162,
+    "causal_peak_2b": 21,
+    "causal_peak_9b": 25,
+    "graft_layer_2b": 17,
+    "recovery_2b_at_graft": "0.968 [0.963, 0.972]",
+    "best_9b_match_for_graft": 22,
+    "cka_at_graft": 0.911,
+    "recovery_curve_2b": [
+      0.0,
+      -0.0,
+      -0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.04,
+      0.05,
+      0.96,
+      0.97,
+      0.97,
+      0.99,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "recovery_curve_9b": [
+      0.0,
+      -0.0,
+      0.0,
+      -0.0,
+      -0.0,
+      -0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.01,
+      0.01,
+      0.02,
+      0.02,
+      0.03,
+      0.04,
+      0.08,
+      0.13,
+      0.33,
+      0.83,
+      0.96,
+      0.96,
+      0.97,
+      1.0,
+      1.0
+    ]
+  },
+  "arithmetic": {
+    "recon_cos_recon": "0.991 [0.991, 0.992]",
+    "recon_cos_task": "0.071 [0.069, 0.074]",
+    "native_unsolv_full": "0.000 [0.000, 0.007]",
+    "recon_unsolv_full": "0.005 [0.002, 0.015]",
+    "recon_unsolv_first": "0.134 [0.108, 0.164]",
+    "task_unsolv_full_acrossseed": "0.038 [0.028, 0.048]",
+    "task_unsolv_first_pooled": "0.794 [0.759, 0.825]",
+    "shuffle_unsolv_first": "0.178 [0.149, 0.211]",
+    "native_solv_full": "0.116 [0.098, 0.136]",
+    "recon_solv_first": "0.953 [0.939, 0.964]",
+    "recon_solv_full": "0.099 [0.083, 0.118]",
+    "task_solv_first": "0.868 [0.847, 0.887]",
+    "task_solv_full": "0.072 [0.058, 0.089]"
+  },
+  "donor_presence": {
+    "arith_donor_probe": "0.750 [0.720, 0.778]",
+    "gsm_donor_probe": "0.135 [0.094, 0.189]",
+    "gsm_majority_baseline": 0.28
+  },
+  "gsm8k_stitch": {
+    "baseline": "0.303 [0.279, 0.329]",
+    "recon_cos": {
+      "L16": "0.893 [0.888, 0.898]",
+      "L17": "0.888 [0.883, 0.893]",
+      "L18": "0.876 [0.870, 0.881]",
+      "L20": "0.880 [0.875, 0.886]",
+      "L22": "0.888 [0.883, 0.893]"
+    },
+    "single_s1.0": "0.235 [0.213, 0.259]",
+    "multi_s1.0": "0.194 [0.174, 0.216]"
+  },
+  "transcription_confirm": {
+    "n": 568,
+    "native_2B_L17": "0.701 [0.645, 0.751]",
+    "recon_map_output": "0.655 [0.598, 0.708]",
+    "task_map_output": "0.743 [0.689, 0.790]",
+    "donor_9B_reference": "0.687 [0.630, 0.738]"
+  },
+  "donor_layer_sweep": {
+    "L3": "0.396 [0.363, 0.429]",
+    "L7": "0.422 [0.389, 0.456]",
+    "L11": "0.503 [0.469, 0.537]",
+    "L15": "0.515 [0.481, 0.548]",
+    "L19": "0.479 [0.446, 0.513]",
+    "L23": "0.750 [0.720, 0.778]",
+    "L27": "0.952 [0.936, 0.965]"
+  },
+  "nonlinear_task_map": {
+    "mlp_unsolv_first": "0.775 [0.739, 0.807]",
+    "mlp_unsolv_full": "0.033 [0.022, 0.052]",
+    "donor_probe_ceiling": "0.750 [0.720, 0.778]",
+    "linear_task_for_reference": "0.038 [0.028, 0.048]"
+  },
+  "oracle_stitch": {
+    "recon_cos_oracle": "0.053 [0.047, 0.059]",
+    "oracle_unsolv_first": "0.912 [0.886, 0.933]",
+    "oracle_unsolv_full": "0.051 [0.036, 0.072]",
+    "oracle_unsolv_shuffle_first": "0.165 [0.137, 0.198]",
+    "gsm_oracle_single_s1.0": "0.249 [0.227, 0.273]",
+    "gsm_oracle_multi_s1.0": "0.215 [0.194, 0.238]",
+    "gsm_baseline_for_reference": "0.303 [0.279, 0.329]"
+  },
+  "lowrank_sweep": {
+    "full_rank_dim": 896,
+    "r1_unsolv_first": "0.356 [0.317, 0.396]",
+    "r2_unsolv_first": "0.528 [0.487, 0.569]",
+    "r4_unsolv_first": "0.671 [0.631, 0.708]",
+    "r8_unsolv_first": "0.646 [0.606, 0.684]",
+    "r16_unsolv_first": "0.790 [0.755, 0.822]",
+    "r32_unsolv_first": "0.789 [0.753, 0.820]",
+    "rfull_unsolv_first": "0.796 [0.761, 0.827]",
+    "sv_energy_at_r": {
+      "r1": 0.123,
+      "r2": 0.219,
+      "r4": 0.327,
+      "r8": 0.471,
+      "r16": 0.634,
+      "r32": 0.775,
+      "r896": 1.0
+    },
+    "task_first_reference": "0.794 [0.759, 0.825]"
+  },
+  "dose_response_depth": {
+    "steps1": {
+      "n_eval_donor_solved": 435,
+      "n_unsolv_by_2B": 10,
+      "donor_first_acc": 0.87,
+      "native_2B_first": 0.977,
+      "donor_probe_first_digit": 0.619,
+      "task_confer_unsolv_first": "0.600 [0.313, 0.832]",
+      "example": "44 * 41"
+    },
+    "steps2": {
+      "n_eval_donor_solved": 743,
+      "n_unsolv_by_2B": 49,
+      "donor_first_acc": 0.929,
+      "native_2B_first": 0.934,
+      "donor_probe_first_digit": 0.755,
+      "task_confer_unsolv_first": "0.816 [0.686, 0.900]",
+      "example": "21 * 43 + 18"
+    },
+    "steps3": {
+      "n_eval_donor_solved": 714,
+      "n_unsolv_by_2B": 118,
+      "donor_first_acc": 0.892,
+      "native_2B_first": 0.835,
+      "donor_probe_first_digit": 0.748,
+      "task_confer_unsolv_first": "0.822 [0.743, 0.881]",
+      "example": "43 * 41 + 4 + 6"
+    },
+    "steps4": {
+      "n_eval_donor_solved": 674,
+      "n_unsolv_by_2B": 169,
+      "donor_first_acc": 0.843,
+      "native_2B_first": 0.749,
+      "donor_probe_first_digit": 0.754,
+      "task_confer_unsolv_first": "0.757 [0.688, 0.816]",
+      "example": "30 * 14 + 17 + 2 + 18"
+    }
+  },
+  "selfmap_control": {
+    "native_unsolv_first": "0.000 [0.000, 0.007]",
+    "selfgraft_unsolv_first": "0.000 [0.000, 0.007]",
+    "reconmap_unsolv_first": "0.134 [0.108, 0.164]",
+    "taskmap_unsolv_first": "0.794 [0.759, 0.825]",
+    "recon_cos_recon_reference": "0.991 [0.991, 0.992]"
+  }
+}
