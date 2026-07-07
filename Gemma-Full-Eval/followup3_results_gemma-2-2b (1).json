@@ -1,0 +1,58 @@
+{
+  "mlp_probe_check": {
+    "sweep_layers": [
+      14,
+      21,
+      30,
+      34,
+      37
+    ],
+    "majority_baseline_digit1": 0.321,
+    "by_donor_layer": {
+      "L14": {
+        "linear_probe": "0.462 [0.428, 0.495]",
+        "mlp_probe": "0.603 [0.570, 0.636]",
+        "g2_task_confer_ref": 0.767
+      },
+      "L21": {
+        "linear_probe": "0.475 [0.441, 0.508]",
+        "mlp_probe": "0.586 [0.552, 0.618]",
+        "g2_task_confer_ref": 0.75
+      },
+      "L30": {
+        "linear_probe": "0.603 [0.570, 0.636]",
+        "mlp_probe": "0.738 [0.707, 0.766]",
+        "g2_task_confer_ref": 0.788
+      },
+      "L34": {
+        "linear_probe": "0.834 [0.807, 0.857]",
+        "mlp_probe": "0.903 [0.881, 0.921]",
+        "g2_task_confer_ref": 0.902
+      },
+      "L37": {
+        "linear_probe": "0.935 [0.916, 0.950]",
+        "mlp_probe": "0.952 [0.935, 0.964]",
+        "g2_task_confer_ref": 0.921
+      }
+    },
+    "leakage_control_native_recipient": {
+      "linear_probe": "0.666 [0.633, 0.697]",
+      "mlp_probe": "0.754 [0.724, 0.782]"
+    },
+    "later_digits_at_validated_layer": {
+      "digit2": {
+        "n": 1693,
+        "majority": 0.138,
+        "linear_probe": "0.214 [0.187, 0.243]",
+        "mlp_probe": "0.256 [0.228, 0.287]"
+      },
+      "digit3": {
+        "n": 1594,
+        "majority": 0.117,
+        "linear_probe": "0.144 [0.122, 0.170]",
+        "mlp_probe": "0.130 [0.109, 0.156]"
+      }
+    },
+    "read": "If mlp ~= g2_confer >> linear at shallow layers (and the leakage-control MLP stays well below), the answer was present in packed form: 'decodable' just needed a stronger reader, linear probes are floors, the law stands as reworded. If mlp stays at linear's level, the conferral surplus is unexplained by presence \u2014 investigate computation-completion. If the leakage MLP jumps too, probes are reading prompt surface features and both readings need the leakage-corrected comparison."
+  }
+}
