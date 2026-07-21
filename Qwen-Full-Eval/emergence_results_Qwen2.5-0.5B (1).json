@@ -1,0 +1,101 @@
+{
+  "consistent_presence": {
+    "leading_digit_probe": 0.75,
+    "per_digit_probe": {
+      "digit1": 0.786,
+      "digit2": 0.158,
+      "digit3": 0.145
+    },
+    "whole_answer_probe": 0.014,
+    "note": "For the scatter, use whole_answer_probe as Llama's x so presence and conferral score the same event; Gemma/Qwen are unchanged (leading ~ whole)."
+  },
+  "sequential_emergence": {
+    "n": 1379,
+    "packed_control": false,
+    "graft_layer": 23,
+    "sweep": [
+      23,
+      25,
+      27
+    ],
+    "grids_by_layer": {
+      "layer_23": {
+        "predicts_d1|probe_d1": 0.78,
+        "predicts_d1|probe_d2": 0.157,
+        "predicts_d1|probe_d3": 0.151,
+        "predicts_d2|probe_d1": 0.991,
+        "predicts_d2|probe_d2": 0.171,
+        "predicts_d2|probe_d3": 0.225,
+        "predicts_d3|probe_d1": 0.933,
+        "predicts_d3|probe_d2": 0.925,
+        "predicts_d3|probe_d3": 0.335
+      },
+      "layer_25": {
+        "predicts_d1|probe_d1": 0.92,
+        "predicts_d1|probe_d2": 0.204,
+        "predicts_d1|probe_d3": 0.128,
+        "predicts_d2|probe_d1": 0.991,
+        "predicts_d2|probe_d2": 0.233,
+        "predicts_d2|probe_d3": 0.175,
+        "predicts_d3|probe_d1": 0.897,
+        "predicts_d3|probe_d2": 0.888,
+        "predicts_d3|probe_d3": 0.546
+      },
+      "layer_27": {
+        "predicts_d1|probe_d1": 0.958,
+        "predicts_d1|probe_d2": 0.228,
+        "predicts_d1|probe_d3": 0.13,
+        "predicts_d2|probe_d1": 0.993,
+        "predicts_d2|probe_d2": 0.394,
+        "predicts_d2|probe_d3": 0.197,
+        "predicts_d3|probe_d1": 0.952,
+        "predicts_d3|probe_d2": 0.903,
+        "predicts_d3|probe_d3": 0.583
+      }
+    },
+    "read": "prefill row (predicts_d1|probe_d2, probe_d3) near chance at ALL depths -> future digits absent from the grafted prefill state. Diagonal predicts_dk|probe_dk climbs with depth -> the next digit is computed deep/late, not at the mid graft site."
+  },
+  "gsm8k_emergence": {
+    "n": 221,
+    "majority_baseline": 0.252,
+    "graft_layer": 23,
+    "sweep": [
+      23,
+      25,
+      27
+    ],
+    "curves_by_layer": {
+      "layer_23": {
+        "gen_0pct": 0.126,
+        "gen_33pct": 0.108,
+        "gen_66pct": 0.135,
+        "pre_answer": 0.117
+      },
+      "layer_25": {
+        "gen_0pct": 0.117,
+        "gen_33pct": 0.108,
+        "gen_66pct": 0.108,
+        "pre_answer": 0.135
+      },
+      "layer_27": {
+        "gen_0pct": 0.135,
+        "gen_33pct": 0.108,
+        "gen_66pct": 0.099,
+        "pre_answer": 0.099
+      }
+    },
+    "read": "gen_0pct (prompt end / prefill) ~ majority at every layer -> answer absent from the grafted state. pre_answer at DEEP layers >> majority -> the answer is computed during generation in deep layers, never in the mid prefill state we graft."
+  },
+  "causal_sequential": {
+    "n_eval": 1681,
+    "n_recipient_fails_d2": 1240,
+    "graft_layer": 23,
+    "deep_layer": 27,
+    "native_digit2": "0.000 [0.000, 0.003]",
+    "A_prefill_mid_digit2": "0.149 [0.130, 0.170]",
+    "B_postd1_deep_digit2": "0.436 [0.409, 0.464]",
+    "C_postd2_mid_digit2": "0.998 [0.994, 1.000]",
+    "C_postd2_shuffle_digit2": "0.106 [0.090, 0.124]",
+    "read": "causal presence law: C (d2 present) >> B (d2 computed pre-emission, deep) > A (d2 absent) ~ shuffle. A digit transfers exactly when it is decodably present in the grafted donor state; the prefill site simply does not contain it yet."
+  }
+}
