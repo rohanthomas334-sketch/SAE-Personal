@@ -1,0 +1,92 @@
+{
+  "consistent_presence": {
+    "leading_digit_probe": 0.701,
+    "per_digit_probe": {
+      "digit1": 0.701,
+      "digit2": 0.153,
+      "digit3": 0.461
+    },
+    "whole_answer_probe": 0.059,
+    "note": "For the scatter, use whole_answer_probe as Llama's x so presence and conferral score the same event; Gemma/Qwen are unchanged (leading ~ whole)."
+  },
+  "sequential_emergence": {
+    "n": 642,
+    "packed_control": true,
+    "graft_layer": 17,
+    "sweep": [
+      17,
+      24,
+      31
+    ],
+    "grids_by_layer": {
+      "layer_17": {
+        "predicts_d1|probe_d1": 0.713,
+        "predicts_d1|probe_d2": 0.153,
+        "predicts_d1|probe_d3": 0.467,
+        "predicts_d2|probe_d1": 0.997,
+        "predicts_d2|probe_d2": 0.162,
+        "predicts_d2|probe_d3": 0.47,
+        "predicts_d3|probe_d1": 0.994,
+        "predicts_d3|probe_d2": 1.0,
+        "predicts_d3|probe_d3": 0.402
+      },
+      "layer_24": {
+        "predicts_d1|probe_d1": 0.919,
+        "predicts_d1|probe_d2": 0.321,
+        "predicts_d1|probe_d3": 0.648,
+        "predicts_d2|probe_d1": 0.997,
+        "predicts_d2|probe_d2": 0.321,
+        "predicts_d2|probe_d3": 0.573,
+        "predicts_d3|probe_d1": 0.947,
+        "predicts_d3|probe_d2": 1.0,
+        "predicts_d3|probe_d3": 0.589
+      },
+      "layer_31": {
+        "predicts_d1|probe_d1": 0.941,
+        "predicts_d1|probe_d2": 0.421,
+        "predicts_d1|probe_d3": 0.688,
+        "predicts_d2|probe_d1": 0.956,
+        "predicts_d2|probe_d2": 0.486,
+        "predicts_d2|probe_d3": 0.71,
+        "predicts_d3|probe_d1": 0.903,
+        "predicts_d3|probe_d2": 0.944,
+        "predicts_d3|probe_d3": 0.72
+      }
+    },
+    "read": "prefill row (predicts_d1|probe_d2, probe_d3) near chance at ALL depths -> future digits absent from the grafted prefill state. Diagonal predicts_dk|probe_dk climbs with depth -> the next digit is computed deep/late, not at the mid graft site."
+  },
+  "gsm8k_emergence": {
+    "n": 676,
+    "majority_baseline": 0.296,
+    "graft_layer": 17,
+    "sweep": [
+      17,
+      24,
+      31
+    ],
+    "curves_by_layer": {
+      "layer_17": {
+        "gen_0pct": 0.195,
+        "gen_33pct": 0.166,
+        "gen_66pct": 0.115,
+        "pre_answer": 0.157
+      },
+      "layer_24": {
+        "gen_0pct": 0.154,
+        "gen_33pct": 0.139,
+        "gen_66pct": 0.127,
+        "pre_answer": 0.142
+      },
+      "layer_31": {
+        "gen_0pct": 0.178,
+        "gen_33pct": 0.142,
+        "gen_66pct": 0.139,
+        "pre_answer": 0.172
+      }
+    },
+    "read": "gen_0pct (prompt end / prefill) ~ majority at every layer -> answer absent from the grafted state. pre_answer at DEEP layers >> majority -> the answer is computed during generation in deep layers, never in the mid prefill state we graft."
+  },
+  "causal_sequential": {
+    "note": "too few distinct-digit items (train=0, eval=0); packed tokenizer (Llama) unsupported in the digit-wise causal test."
+  }
+}
