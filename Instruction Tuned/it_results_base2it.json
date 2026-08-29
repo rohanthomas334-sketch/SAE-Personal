@@ -1,0 +1,681 @@
+{
+  "patching": {
+    "n_used_recipient": 150,
+    "n_used_donor": 150,
+    "causal_peak_recipient": 23,
+    "causal_peak_donor": 39,
+    "graft_layer_recipient": 20,
+    "recovery_recipient_at_graft": "0.748 [0.738, 0.757]",
+    "best_donor_match_for_graft": 34,
+    "cka_at_graft": 0.951,
+    "cka_at_configured_pair": 0.951,
+    "recovery_curve_recipient": [
+      -0.0,
+      0.0,
+      -0.0,
+      -0.0,
+      -0.0,
+      0.0,
+      -0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.01,
+      0.01,
+      0.07,
+      0.23,
+      0.25,
+      0.72,
+      0.72,
+      0.75,
+      0.76,
+      0.76,
+      0.78,
+      0.8,
+      1.0
+    ],
+    "recovery_curve_donor": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.02,
+      0.02,
+      0.09,
+      0.25,
+      0.36,
+      0.37,
+      0.37,
+      0.37,
+      0.37,
+      0.37,
+      0.37,
+      0.37,
+      0.38,
+      0.43,
+      0.56,
+      1.0
+    ],
+    "suggested_single_pair": [
+      21,
+      35
+    ],
+    "suggested_layer_pairs": [
+      [
+        18,
+        32
+      ],
+      [
+        20,
+        34
+      ],
+      [
+        22,
+        35
+      ],
+      [
+        24,
+        38
+      ]
+    ]
+  },
+  "donor_layer_probe_sweep": {
+    "n": 600,
+    "layers": [
+      4,
+      8,
+      12,
+      16,
+      20,
+      24,
+      28,
+      32,
+      34,
+      36,
+      37,
+      38,
+      40
+    ],
+    "graft_layer_donor": 34,
+    "donor_first_token_acc_on_sweepset": 0.835,
+    "majority_baseline": 0.287,
+    "digit1_probe_by_layer": {
+      "L4": "0.320 [0.270, 0.375]",
+      "L8": "0.283 [0.235, 0.337]",
+      "L12": "0.277 [0.229, 0.330]",
+      "L16": "0.290 [0.242, 0.344]",
+      "L20": "0.313 [0.263, 0.368]",
+      "L24": "0.330 [0.279, 0.385]",
+      "L28": "0.340 [0.289, 0.395]",
+      "L32": "0.623 [0.567, 0.676]",
+      "L34": "0.803 [0.755, 0.844]",
+      "L36": "0.800 [0.751, 0.841]",
+      "L37": "0.837 [0.791, 0.874]",
+      "L38": "0.840 [0.794, 0.877]",
+      "L40": "0.857 [0.812, 0.892]"
+    }
+  },
+  "cka_candidate_table": {
+    "recipL18<-donorL31": {
+      "cka": 0.898,
+      "recip_recovery": 0.721,
+      "donor_recovery": 0.365
+    },
+    "recipL18<-donorL32": {
+      "cka": 0.909,
+      "recip_recovery": 0.721,
+      "donor_recovery": 0.371
+    },
+    "recipL18<-donorL33": {
+      "cka": 0.879,
+      "recip_recovery": 0.721,
+      "donor_recovery": 0.372
+    },
+    "recipL18<-donorL34": {
+      "cka": 0.779,
+      "recip_recovery": 0.721,
+      "donor_recovery": 0.372
+    },
+    "recipL18<-donorL35": {
+      "cka": 0.73,
+      "recip_recovery": 0.721,
+      "donor_recovery": 0.375
+    },
+    "recipL18<-donorL37": {
+      "cka": 0.599,
+      "recip_recovery": 0.721,
+      "donor_recovery": 0.375
+    },
+    "recipL19<-donorL31": {
+      "cka": 0.924,
+      "recip_recovery": 0.722,
+      "donor_recovery": 0.365
+    },
+    "recipL19<-donorL33": {
+      "cka": 0.919,
+      "recip_recovery": 0.722,
+      "donor_recovery": 0.372
+    },
+    "recipL19<-donorL34": {
+      "cka": 0.857,
+      "recip_recovery": 0.722,
+      "donor_recovery": 0.372
+    },
+    "recipL19<-donorL35": {
+      "cka": 0.822,
+      "recip_recovery": 0.722,
+      "donor_recovery": 0.375
+    },
+    "recipL19<-donorL37": {
+      "cka": 0.716,
+      "recip_recovery": 0.722,
+      "donor_recovery": 0.375
+    },
+    "recipL20<-donorL31": {
+      "cka": 0.855,
+      "recip_recovery": 0.748,
+      "donor_recovery": 0.365
+    },
+    "recipL20<-donorL33": {
+      "cka": 0.923,
+      "recip_recovery": 0.748,
+      "donor_recovery": 0.372
+    },
+    "recipL20<-donorL34": {
+      "cka": 0.951,
+      "recip_recovery": 0.748,
+      "donor_recovery": 0.372
+    },
+    "recipL20<-donorL35": {
+      "cka": 0.942,
+      "recip_recovery": 0.748,
+      "donor_recovery": 0.375
+    },
+    "recipL20<-donorL37": {
+      "cka": 0.888,
+      "recip_recovery": 0.748,
+      "donor_recovery": 0.375
+    },
+    "recipL21<-donorL31": {
+      "cka": 0.804,
+      "recip_recovery": 0.76,
+      "donor_recovery": 0.365
+    },
+    "recipL21<-donorL33": {
+      "cka": 0.889,
+      "recip_recovery": 0.76,
+      "donor_recovery": 0.372
+    },
+    "recipL21<-donorL34": {
+      "cka": 0.947,
+      "recip_recovery": 0.76,
+      "donor_recovery": 0.372
+    },
+    "recipL21<-donorL35": {
+      "cka": 0.952,
+      "recip_recovery": 0.76,
+      "donor_recovery": 0.375
+    },
+    "recipL21<-donorL37": {
+      "cka": 0.931,
+      "recip_recovery": 0.76,
+      "donor_recovery": 0.375
+    },
+    "recipL22<-donorL31": {
+      "cka": 0.759,
+      "recip_recovery": 0.761,
+      "donor_recovery": 0.365
+    },
+    "recipL22<-donorL33": {
+      "cka": 0.857,
+      "recip_recovery": 0.761,
+      "donor_recovery": 0.372
+    },
+    "recipL22<-donorL34": {
+      "cka": 0.933,
+      "recip_recovery": 0.761,
+      "donor_recovery": 0.372
+    },
+    "recipL22<-donorL35": {
+      "cka": 0.946,
+      "recip_recovery": 0.761,
+      "donor_recovery": 0.375
+    },
+    "recipL22<-donorL37": {
+      "cka": 0.944,
+      "recip_recovery": 0.761,
+      "donor_recovery": 0.375
+    },
+    "recipL22<-donorL41": {
+      "cka": 0.301,
+      "recip_recovery": 0.761,
+      "donor_recovery": 1.0
+    },
+    "recipL24<-donorL38": {
+      "cka": 0.965,
+      "recip_recovery": 0.804,
+      "donor_recovery": 0.383
+    }
+  },
+  "bins": {
+    "n_train": 3000,
+    "n_eval_generated": 2000,
+    "donor_solve_rate": 0.8465,
+    "n_donor_solved": 1693,
+    "n_recipient_solvable": 1372,
+    "n_unsolvable_bin": 321,
+    "recipient_native_rate_on_donor_solved": 0.8104
+  },
+  "arithmetic": {
+    "recon_cos_recon": "0.982 [0.981, 0.983]",
+    "recon_cos_task": "0.266 [0.263, 0.269]",
+    "native_unsolv_full": "0.006 [0.002, 0.022]",
+    "recon_unsolv_full": "0.062 [0.041, 0.094]",
+    "recon_unsolv_first": "0.305 [0.257, 0.358]",
+    "task_unsolv_full_acrossseed": "0.153 [0.134, 0.172]",
+    "task_unsolv_full_per_seed": [
+      0.1651,
+      0.1526,
+      0.1558,
+      0.1277,
+      0.1651
+    ],
+    "task_unsolv_first_pooled": "0.847 [0.804, 0.883]",
+    "shuffle_unsolv_first": "0.131 [0.098, 0.172]",
+    "native_solv_full": "0.220 [0.199, 0.243]",
+    "recon_solv_first": "0.951 [0.938, 0.961]",
+    "recon_solv_full": "0.200 [0.179, 0.222]",
+    "task_solv_first": "0.935 [0.921, 0.947]",
+    "task_solv_full": "0.164 [0.145, 0.185]"
+  },
+  "selfgraft_control": {
+    "native_unsolv_first": "0.000 [0.000, 0.012]",
+    "selfgraft_unsolv_first": "0.000 [0.000, 0.012]",
+    "selfgraft_unsolv_full": "0.000 [0.000, 0.012]",
+    "reconmap_unsolv_first": "0.305 [0.257, 0.358]",
+    "taskmap_unsolv_first": "0.847 [0.804, 0.883]",
+    "recon_cos_recon_reference": "0.982 [0.981, 0.983]",
+    "_expect": "selfgraft ~= native (hook is faithful); reconmap ~= native (recon reconstructs); taskmap >> native (transcription)"
+  },
+  "donor_digit_probes": {
+    "layers": [
+      34,
+      37
+    ],
+    "graft_layer_donor": 34,
+    "by_layer": {
+      "donorL34": {
+        "digit1": {
+          "n": 1693,
+          "acc": "0.838 [0.812, 0.862]",
+          "majority": 0.322
+        },
+        "digit2": {
+          "n": 1693,
+          "acc": "0.221 [0.194, 0.250]",
+          "majority": 0.137
+        },
+        "digit3": {
+          "n": 1592,
+          "acc": "0.139 [0.117, 0.165]",
+          "majority": 0.116
+        }
+      },
+      "donorL37": {
+        "digit1": {
+          "n": 1693,
+          "acc": "0.933 [0.914, 0.948]",
+          "majority": 0.322
+        },
+        "digit2": {
+          "n": 1693,
+          "acc": "0.273 [0.244, 0.304]",
+          "majority": 0.137
+        },
+        "digit3": {
+          "n": 1592,
+          "acc": "0.144 [0.122, 0.171]",
+          "majority": 0.116
+        }
+      }
+    },
+    "_note": "full-answer conferral is bounded above by how much of the answer is decodable here; digit1 >> digit2 >> digit3 is the signature of 'the graft carries an answer, not a computation'."
+  },
+  "freevec_ceiling": {
+    "n_unsolv_used": 200,
+    "ceiling_first": "1.000 [0.981, 1.000]",
+    "ceiling_full": "0.990 [0.964, 0.997]",
+    "_ref_task_full": "0.153 [0.134, 0.172]",
+    "_ref_native_full": "0.006 [0.002, 0.022]"
+  },
+  "transcription_confirm": {
+    "n": 321,
+    "majority_baseline": 0.186,
+    "native_recipient_L20": "0.547 [0.469, 0.622]",
+    "recon_map_output": "0.540 [0.463, 0.616]",
+    "task_map_output_STITCHED_VECTOR": "0.689 [0.614, 0.756]",
+    "donor_graft_state_L34": "0.665 [0.589, 0.733]"
+  },
+  "distill_kl_sweep": {
+    "pure_KL": {
+      "final_KL": 0.034,
+      "recon_cos": "0.304 [0.302, 0.307]",
+      "unsolv_first": "0.903 [0.866, 0.931]",
+      "map_output_probe": "0.683 [0.608, 0.750]",
+      "unsolv_full": "0.150 [0.115, 0.193]"
+    },
+    "KL+0.1xMSE": {
+      "final_KL": 0.2915,
+      "recon_cos": "0.681 [0.677, 0.685]",
+      "unsolv_first": "0.707 [0.655, 0.754]",
+      "map_output_probe": "0.615 [0.538, 0.687]"
+    },
+    "KL+1.0xMSE": {
+      "final_KL": 0.4743,
+      "recon_cos": "0.938 [0.937, 0.940]",
+      "unsolv_first": "0.657 [0.604, 0.707]",
+      "map_output_probe": "0.553 [0.476, 0.627]"
+    },
+    "KL+10.0xMSE": {
+      "final_KL": 0.2781,
+      "recon_cos": "0.959 [0.958, 0.960]",
+      "unsolv_first": "0.393 [0.341, 0.447]",
+      "map_output_probe": "0.609 [0.532, 0.681]",
+      "unsolv_full": "0.084 [0.058, 0.120]"
+    },
+    "_ref_recon_map": {
+      "recon_cos": "0.982 [0.981, 0.983]",
+      "unsolv_first": "0.305 [0.257, 0.358]",
+      "map_output_probe": "0.540 [0.463, 0.616]"
+    },
+    "_ref_CE_task_map": {
+      "recon_cos": "0.266 [0.263, 0.269]",
+      "unsolv_first": "0.847 [0.804, 0.883]",
+      "map_output_probe": "0.689 [0.614, 0.756]"
+    },
+    "_ref_native_donor": {
+      "native_2B": "0.547 [0.469, 0.622]",
+      "donor_9B": "0.665 [0.589, 0.733]"
+    }
+  },
+  "nonlinear_task_map": {
+    "mlp_hidden": 1024,
+    "mlp_params": 6032640,
+    "linear_map_params": 8259840,
+    "mlp_unsolv_first": "0.850 [0.807, 0.885]",
+    "mlp_unsolv_full": "0.174 [0.137, 0.220]",
+    "donor_probe_ceiling": "n/a",
+    "linear_task_first_for_reference": "0.847 [0.804, 0.883]",
+    "linear_task_full_for_reference": "0.153 [0.134, 0.172]"
+  },
+  "lowrank_sweep": {
+    "full_rank_dim": 2304,
+    "d_recipient": 2304,
+    "r1_unsolv_first": "0.215 [0.174, 0.263]",
+    "r2_unsolv_first": "0.483 [0.429, 0.537]",
+    "r4_unsolv_first": "0.579 [0.525, 0.632]",
+    "r8_unsolv_first": "0.766 [0.717, 0.809]",
+    "r16_unsolv_first": "0.801 [0.753, 0.841]",
+    "r32_unsolv_first": "0.841 [0.797, 0.877]",
+    "r64_unsolv_first": "0.838 [0.794, 0.874]",
+    "r128_unsolv_first": "0.841 [0.797, 0.877]",
+    "rfull_unsolv_first": "0.850 [0.807, 0.885]",
+    "r8_unsolv_full": "0.134 [0.101, 0.176]",
+    "r32_unsolv_full": "0.156 [0.120, 0.199]",
+    "r128_unsolv_full": "0.156 [0.120, 0.199]",
+    "rfull_unsolv_full": "0.165 [0.128, 0.210]",
+    "sv_energy_at_r": {
+      "r1": 0.043,
+      "r2": 0.084,
+      "r4": 0.157,
+      "r8": 0.264,
+      "r16": 0.394,
+      "r32": 0.539,
+      "r64": 0.677,
+      "r128": 0.799,
+      "r2304": 1.0
+    },
+    "task_first_reference": "0.847 [0.804, 0.883]"
+  },
+  "answer_subspace_erasure": {
+    "d_recipient": 2304,
+    "inlp_rounds_run": 60,
+    "baseline_task_first": "0.847 [0.804, 0.883]",
+    "native_floor_first": 0.0,
+    "final_rank": 540,
+    "final_rank_over_dmodel": 0.2344,
+    "answer_erased_first_at_final_rank": "0.271 [0.225, 0.322]",
+    "random_erased_first_at_final_rank": "0.850 [0.807, 0.885]",
+    "collapse_frac_threshold": 0.5,
+    "collapse_rank": 180,
+    "collapse_rank_over_dmodel": 0.0781,
+    "collapse_rank_to_native_floor": null,
+    "collapse_rank_to_native_floor_over_dmodel": null,
+    "curve": [
+      {
+        "rank": 36,
+        "rank_over_dmodel": 0.0156,
+        "answer_erased_first": 0.7227,
+        "random_erased_first": 0.8505
+      },
+      {
+        "rank": 72,
+        "rank_over_dmodel": 0.0312,
+        "answer_erased_first": 0.5452,
+        "random_erased_first": 0.8536
+      },
+      {
+        "rank": 108,
+        "rank_over_dmodel": 0.0469,
+        "answer_erased_first": 0.4829,
+        "random_erased_first": 0.8567
+      },
+      {
+        "rank": 144,
+        "rank_over_dmodel": 0.0625,
+        "answer_erased_first": 0.433,
+        "random_erased_first": 0.8474
+      },
+      {
+        "rank": 180,
+        "rank_over_dmodel": 0.0781,
+        "answer_erased_first": 0.4206,
+        "random_erased_first": 0.8598
+      },
+      {
+        "rank": 216,
+        "rank_over_dmodel": 0.0938,
+        "answer_erased_first": 0.4206,
+        "random_erased_first": 0.8536
+      },
+      {
+        "rank": 252,
+        "rank_over_dmodel": 0.1094,
+        "answer_erased_first": 0.3863,
+        "random_erased_first": 0.838
+      },
+      {
+        "rank": 288,
+        "rank_over_dmodel": 0.125,
+        "answer_erased_first": 0.3738,
+        "random_erased_first": 0.8692
+      },
+      {
+        "rank": 324,
+        "rank_over_dmodel": 0.1406,
+        "answer_erased_first": 0.3489,
+        "random_erased_first": 0.8536
+      },
+      {
+        "rank": 360,
+        "rank_over_dmodel": 0.1562,
+        "answer_erased_first": 0.3427,
+        "random_erased_first": 0.866
+      },
+      {
+        "rank": 396,
+        "rank_over_dmodel": 0.1719,
+        "answer_erased_first": 0.3178,
+        "random_erased_first": 0.8474
+      },
+      {
+        "rank": 432,
+        "rank_over_dmodel": 0.1875,
+        "answer_erased_first": 0.2991,
+        "random_erased_first": 0.8629
+      },
+      {
+        "rank": 468,
+        "rank_over_dmodel": 0.2031,
+        "answer_erased_first": 0.3084,
+        "random_erased_first": 0.8474
+      },
+      {
+        "rank": 504,
+        "rank_over_dmodel": 0.2188,
+        "answer_erased_first": 0.2897,
+        "random_erased_first": 0.8567
+      },
+      {
+        "rank": 540,
+        "rank_over_dmodel": 0.2344,
+        "answer_erased_first": 0.271,
+        "random_erased_first": 0.8505
+      }
+    ],
+    "_ref_shuffle_first": "0.131 [0.098, 0.172]",
+    "_headline": "collapse_rank_over_dmodel is the redundancy metric: bigger => the recipient spreads the transcribed answer over proportionally more directions.",
+    "oneshot_rank_k": 9,
+    "oneshot_answer_ablated_first": "0.794 [0.747, 0.835]",
+    "oneshot_random_ablated_first": "0.847 [0.804, 0.883]",
+    "oneshot_task_full": "0.153 [0.134, 0.172]",
+    "oneshot_answer_ablated_full": "0.134 [0.101, 0.176]"
+  },
+  "_caveats": [
+    "recipient SAE fell back to base-model GemmaScope; IT attribution approximate"
+  ],
+  "recipient_feature_delta": {
+    "sae": "gemma-scope-2b-pt-res-canonical/layer_20/width_16k/canonical",
+    "n_features": 16384,
+    "n_unsolv": 321,
+    "d_recipient": 2304,
+    "task_stitch_L1_change": 122816.17,
+    "recon_stitch_L1_change": 101.99,
+    "task_over_recon_L1_ratio": 1204.2,
+    "task_L1_per_feature": 7.496104,
+    "n_features_moved_gt_0p01": 16384,
+    "answer_selectivity_added_features": 0.0203,
+    "answer_selectivity_removed_features": 0.0081,
+    "answer_selectivity_all_features": 0.0059,
+    "added_over_baseline_ratio": 3.47,
+    "top_added_feature_ids": [
+      14637,
+      16267,
+      15798,
+      1858,
+      2045,
+      7019,
+      8272,
+      4140,
+      11106,
+      7166,
+      12795,
+      5674,
+      13246,
+      15916,
+      2179
+    ],
+    "top_removed_feature_ids": [
+      6546,
+      8099,
+      9340,
+      15675,
+      3089,
+      333,
+      9371,
+      142,
+      12484,
+      12377,
+      2535,
+      13095,
+      16364,
+      1299,
+      10502
+    ],
+    "interpretation": "added-feature selectivity >> baseline AND task L1 >> recon L1 => the stitch injects the recipient's ANSWER features, not generic computation."
+  },
+  "config": {
+    "donor": "google/gemma-2-9b",
+    "recipient": "google/gemma-2-2b-it",
+    "single_pair_recipient_donor": [
+      20,
+      34
+    ],
+    "layer_pairs": [
+      [
+        18,
+        34
+      ],
+      [
+        20,
+        37
+      ],
+      [
+        22,
+        41
+      ],
+      [
+        24,
+        44
+      ]
+    ],
+    "d_recipient": 2304,
+    "d_donor": 3584,
+    "layers_recipient": 26,
+    "layers_donor": 42,
+    "n_arith_train": 3000,
+    "n_arith_eval": 2000,
+    "arith_batch": 16,
+    "gsm_batch": 8,
+    "donor_batch": 8,
+    "task_seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "task_epochs": 6,
+    "gsm_eval_n": 400,
+    "ceil_n": 200,
+    "smoke_test": false,
+    "donor_quantized": false,
+    "arm": "base2it",
+    "use_chat_template": false
+  }
+}
