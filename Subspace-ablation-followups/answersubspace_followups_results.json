@@ -1,0 +1,1413 @@
+{
+  "bins": {
+    "n_train": 3000,
+    "n_eval_generated": 2000,
+    "donor_solve_rate": 0.8465,
+    "n_donor_solved": 1693,
+    "n_recipient_solvable": 1059,
+    "n_unsolvable_bin": 634,
+    "recipient_native_rate_on_donor_solved": 0.6255
+  },
+  "arithmetic": {
+    "recon_cos_recon": "0.981 [0.980, 0.982]",
+    "recon_cos_task": "0.197 [0.194, 0.200]",
+    "native_unsolv_full": "0.000 [0.000, 0.006]",
+    "recon_unsolv_full": "0.032 [0.021, 0.048]",
+    "recon_unsolv_first": "0.188 [0.159, 0.220]",
+    "task_unsolv_full_acrossseed": "0.125 [0.117, 0.134]",
+    "task_unsolv_full_per_seed": [
+      0.1278,
+      0.1262,
+      0.123,
+      0.1151,
+      0.1341
+    ],
+    "task_unsolv_first_pooled": "0.904 [0.878, 0.924]",
+    "shuffle_unsolv_first": "0.109 [0.087, 0.135]",
+    "native_solv_full": "0.126 [0.107, 0.147]",
+    "recon_solv_first": "0.928 [0.911, 0.942]",
+    "recon_solv_full": "0.120 [0.102, 0.141]",
+    "task_solv_first": "0.950 [0.935, 0.962]",
+    "task_solv_full": "0.101 [0.084, 0.121]"
+  },
+  "inlp": {
+    "d_recipient": 2304,
+    "baseline_task_first": "0.904 [0.878, 0.924]",
+    "native_floor_first": 0.0,
+    "final_rank": 540,
+    "final_rank_over_dmodel": 0.2344,
+    "converged_at_rank": null,
+    "snapshot_ranks": {
+      "360": 360,
+      "540": 540
+    },
+    "collapse_frac_threshold": 0.5,
+    "collapse_rank": 144,
+    "collapse_rank_over_dmodel": 0.0625,
+    "collapse_rank_to_native_floor": null,
+    "erased_at_final_rank_zero": "0.200 [0.171, 0.233]",
+    "erased_at_final_rank_mean": "0.197 [0.168, 0.230]",
+    "random_at_final_rank_zero": "0.902 [0.877, 0.923]",
+    "curve": [
+      {
+        "rank": 36,
+        "rank_over_dmodel": 0.0156,
+        "answer_erased_zero": 0.7476,
+        "answer_erased_mean": 0.7571,
+        "random_erased_zero": 0.9054
+      },
+      {
+        "rank": 72,
+        "rank_over_dmodel": 0.0312,
+        "answer_erased_zero": 0.5647,
+        "answer_erased_mean": 0.5694,
+        "random_erased_zero": 0.8959
+      },
+      {
+        "rank": 108,
+        "rank_over_dmodel": 0.0469,
+        "answer_erased_zero": 0.4795,
+        "answer_erased_mean": 0.4984,
+        "random_erased_zero": 0.9054
+      },
+      {
+        "rank": 144,
+        "rank_over_dmodel": 0.0625,
+        "answer_erased_zero": 0.4211,
+        "answer_erased_mean": 0.4353,
+        "random_erased_zero": 0.9069
+      },
+      {
+        "rank": 180,
+        "rank_over_dmodel": 0.0781,
+        "answer_erased_zero": 0.3959,
+        "answer_erased_mean": 0.4117,
+        "random_erased_zero": 0.8927
+      },
+      {
+        "rank": 216,
+        "rank_over_dmodel": 0.0938,
+        "answer_erased_zero": 0.3644,
+        "answer_erased_mean": 0.3707,
+        "random_erased_zero": 0.8943
+      },
+      {
+        "rank": 252,
+        "rank_over_dmodel": 0.1094,
+        "answer_erased_zero": 0.3344,
+        "answer_erased_mean": 0.3454,
+        "random_erased_zero": 0.9022
+      },
+      {
+        "rank": 288,
+        "rank_over_dmodel": 0.125,
+        "answer_erased_zero": 0.2461,
+        "answer_erased_mean": 0.2429,
+        "random_erased_zero": 0.9038
+      },
+      {
+        "rank": 324,
+        "rank_over_dmodel": 0.1406,
+        "answer_erased_zero": 0.2287,
+        "answer_erased_mean": 0.2319,
+        "random_erased_zero": 0.9069
+      },
+      {
+        "rank": 360,
+        "rank_over_dmodel": 0.1562,
+        "answer_erased_zero": 0.2192,
+        "answer_erased_mean": 0.2192,
+        "random_erased_zero": 0.9054
+      },
+      {
+        "rank": 396,
+        "rank_over_dmodel": 0.1719,
+        "answer_erased_zero": 0.2461,
+        "answer_erased_mean": 0.2319,
+        "random_erased_zero": 0.9038
+      },
+      {
+        "rank": 432,
+        "rank_over_dmodel": 0.1875,
+        "answer_erased_zero": 0.2397,
+        "answer_erased_mean": 0.2445,
+        "random_erased_zero": 0.9132
+      },
+      {
+        "rank": 468,
+        "rank_over_dmodel": 0.2031,
+        "answer_erased_zero": 0.2366,
+        "answer_erased_mean": 0.2445,
+        "random_erased_zero": 0.9069
+      },
+      {
+        "rank": 504,
+        "rank_over_dmodel": 0.2188,
+        "answer_erased_zero": 0.2319,
+        "answer_erased_mean": 0.2256,
+        "random_erased_zero": 0.9038
+      },
+      {
+        "rank": 540,
+        "rank_over_dmodel": 0.2344,
+        "answer_erased_zero": 0.2003,
+        "answer_erased_mean": 0.1972,
+        "random_erased_zero": 0.9022
+      }
+    ],
+    "_seed": "SINGLE SEED (task_maps[0]); the 5-seed spread for the same quantity is in RESULTS['arithmetic']['task_unsolv_full_per_seed']"
+  },
+  "A_prompt_mismatch": {
+    "_what": "recipient reads P'=(a,b,c+delta); the grafted vector is f(donor state on X). MISMATCH: X=P (stale). MATCHED: X=P' (pipeline control). SHUFFLED: X=unrelated. NATIVE: no graft.",
+    "n_unsolvable_bin": 634,
+    "n_with_valid_delta": 555,
+    "n_dropped_no_delta": 79,
+    "n_scored_Pprime_also_unsolvable": 306,
+    "same_prompt_token_length_rate": 1.0,
+    "donor_solves_Pprime_rate_on_bin": 0.5915,
+    "delta_distribution_kept": {
+      "1": 9,
+      "-1": 16,
+      "-2": 11,
+      "2": 5,
+      "3": 9,
+      "-3": 13,
+      "4": 9,
+      "-4": 11,
+      "-5": 10,
+      "5": 10,
+      "6": 9,
+      "-6": 8,
+      "-7": 7,
+      "7": 5,
+      "-8": 6,
+      "8": 5,
+      "9": 7,
+      "-9": 10,
+      "-10": 7,
+      "10": 4,
+      "11": 3,
+      "-11": 3,
+      "-12": 5,
+      "12": 2,
+      "-13": 4,
+      "13": 5,
+      "-14": 7,
+      "14": 4,
+      "15": 8,
+      "-15": 7,
+      "-16": 3,
+      "16": 2,
+      "17": 6,
+      "-17": 7,
+      "18": 3,
+      "-18": 2,
+      "-19": 6,
+      "19": 4,
+      "20": 3,
+      "-20": 2,
+      "-21": 4,
+      "21": 3,
+      "-22": 5,
+      "22": 4,
+      "23": 7,
+      "-23": 3,
+      "-24": 8,
+      "24": 1,
+      "-25": 4,
+      "25": 5,
+      "-26": 4,
+      "26": 4,
+      "27": 4,
+      "-27": 1,
+      "-28": 6,
+      "28": 3,
+      "29": 5,
+      "-29": 4,
+      "30": 3,
+      "-30": 4,
+      "-31": 3,
+      "31": 4,
+      "32": 3,
+      "-32": 2,
+      "-33": 6,
+      "33": 3,
+      "-34": 4,
+      "34": 1,
+      "-35": 7,
+      "35": 4,
+      "-36": 10,
+      "36": 7,
+      "37": 2,
+      "-37": 3,
+      "-38": 2,
+      "38": 5,
+      "-39": 1,
+      "39": 1,
+      "40": 3,
+      "-40": 1,
+      "-41": 1,
+      "41": 1,
+      "42": 5,
+      "-42": 4,
+      "-43": 4,
+      "43": 3,
+      "-44": 1,
+      "44": 3,
+      "-45": 4,
+      "45": 7,
+      "46": 6,
+      "-46": 2,
+      "47": 2,
+      "-47": 4,
+      "48": 1,
+      "-48": 2,
+      "49": 7,
+      "-49": 2,
+      "50": 2,
+      "-50": 1,
+      "-51": 2,
+      "51": 2,
+      "52": 5,
+      "-52": 4,
+      "-53": 5,
+      "53": 3,
+      "-54": 1,
+      "54": 2,
+      "55": 4,
+      "-55": 1,
+      "56": 2,
+      "-57": 1,
+      "57": 1,
+      "-58": 3,
+      "59": 3,
+      "-59": 1,
+      "-60": 4,
+      "61": 5,
+      "-61": 1,
+      "62": 3,
+      "-62": 1,
+      "63": 1,
+      "-64": 1,
+      "64": 1,
+      "65": 2,
+      "66": 2,
+      "68": 3,
+      "-68": 1,
+      "69": 2,
+      "-69": 1,
+      "70": 1,
+      "71": 1,
+      "72": 1,
+      "74": 1,
+      "75": 3,
+      "76": 3,
+      "77": 1,
+      "78": 1,
+      "-79": 1,
+      "-82": 1
+    },
+    "delta_distribution_scored_bin": {
+      "-1": 5,
+      "1": 3,
+      "-2": 4,
+      "2": 1,
+      "3": 5,
+      "-3": 6,
+      "4": 4,
+      "-4": 2,
+      "-5": 5,
+      "5": 6,
+      "-6": 5,
+      "6": 5,
+      "7": 3,
+      "-7": 4,
+      "-8": 4,
+      "8": 3,
+      "9": 4,
+      "-9": 7,
+      "-10": 6,
+      "10": 2,
+      "11": 2,
+      "-11": 1,
+      "-12": 2,
+      "12": 1,
+      "-13": 1,
+      "13": 4,
+      "-14": 3,
+      "14": 3,
+      "-15": 4,
+      "15": 3,
+      "-16": 2,
+      "16": 2,
+      "-17": 4,
+      "17": 1,
+      "18": 3,
+      "-18": 1,
+      "-19": 4,
+      "19": 1,
+      "-20": 2,
+      "20": 2,
+      "-21": 2,
+      "21": 1,
+      "-22": 3,
+      "22": 3,
+      "23": 3,
+      "-23": 2,
+      "-24": 4,
+      "-25": 1,
+      "25": 4,
+      "-26": 4,
+      "26": 2,
+      "27": 2,
+      "-28": 6,
+      "28": 2,
+      "29": 3,
+      "-29": 3,
+      "-30": 2,
+      "-31": 3,
+      "31": 4,
+      "32": 2,
+      "-32": 1,
+      "-33": 4,
+      "33": 1,
+      "-34": 4,
+      "34": 1,
+      "-35": 4,
+      "35": 2,
+      "-36": 9,
+      "36": 3,
+      "37": 1,
+      "-37": 2,
+      "-38": 2,
+      "38": 2,
+      "-39": 1,
+      "40": 2,
+      "-40": 1,
+      "-41": 1,
+      "41": 1,
+      "42": 3,
+      "-42": 3,
+      "-43": 3,
+      "43": 1,
+      "-44": 1,
+      "44": 1,
+      "-45": 3,
+      "45": 4,
+      "-46": 2,
+      "46": 2,
+      "47": 1,
+      "-47": 3,
+      "48": 1,
+      "-48": 1,
+      "49": 3,
+      "-49": 1,
+      "50": 1,
+      "-50": 1,
+      "51": 2,
+      "52": 4,
+      "-52": 4,
+      "-53": 3,
+      "53": 1,
+      "54": 1,
+      "55": 2,
+      "56": 1,
+      "-57": 1,
+      "57": 1,
+      "-58": 3,
+      "59": 2,
+      "-59": 1,
+      "-60": 4,
+      "61": 3,
+      "-61": 1,
+      "-62": 1,
+      "65": 1,
+      "68": 1,
+      "-68": 1,
+      "-69": 1,
+      "76": 1,
+      "78": 1,
+      "-79": 1,
+      "-82": 1
+    },
+    "abs_delta_median": 25.5,
+    "first_token": {
+      "MISMATCH_stale_graft": {
+        "emits_y_prime_ADAPTED": "0.082 [0.056, 0.118]",
+        "emits_y_STALE": "0.892 [0.852, 0.922]",
+        "NEITHER": "0.026 [0.013, 0.051]",
+        "n": 306,
+        "neither_bucket_leaddigit_matches_yP": "0.000 [0.000, 0.324]",
+        "_neither_bucket_n": 8
+      },
+      "MATCHED_graft_control": {
+        "emits_y_prime_ADAPTED": "0.474 [0.419, 0.530]",
+        "emits_y_STALE": "0.516 [0.460, 0.572]",
+        "NEITHER": "0.010 [0.003, 0.028]",
+        "n": 306,
+        "neither_bucket_leaddigit_matches_yP": "0.000 [0.000, 0.562]",
+        "_neither_bucket_n": 3
+      },
+      "SHUFFLED_control": {
+        "emits_y_prime_ADAPTED": "0.095 [0.067, 0.133]",
+        "emits_y_STALE": "0.082 [0.056, 0.118]",
+        "NEITHER": "0.824 [0.777, 0.862]",
+        "n": 306,
+        "neither_bucket_leaddigit_matches_yP": "0.000 [0.000, 0.015]",
+        "_neither_bucket_n": 252
+      },
+      "NATIVE_no_graft": {
+        "emits_y_prime_ADAPTED": "0.000 [0.000, 0.012]",
+        "emits_y_STALE": "0.366 [0.314, 0.421]",
+        "NEITHER": "0.634 [0.579, 0.686]",
+        "n": 306,
+        "neither_bucket_leaddigit_matches_yP": "0.000 [0.000, 0.019]",
+        "_neither_bucket_n": 194
+      }
+    },
+    "_reference_headline_matched_on_original_bin": "0.904 [0.878, 0.924]",
+    "_seed": "SINGLE SEED (task_maps[0]); the 5-seed spread for the same quantity is in RESULTS['arithmetic']['task_unsolv_full_per_seed']",
+    "full_answer": {
+      "MISMATCH_stale_graft": {
+        "emits_y_prime_ADAPTED": "0.036 [0.020, 0.063]",
+        "emits_y_STALE": "0.007 [0.002, 0.024]",
+        "NEITHER": "0.958 [0.929, 0.975]",
+        "neither_bucket_leaddigit_matches_yP": "0.925 [0.889, 0.950]",
+        "n": 306
+      },
+      "MATCHED_graft_control": {
+        "emits_y_prime_ADAPTED": "0.193 [0.153, 0.241]",
+        "emits_y_STALE": "0.010 [0.003, 0.028]",
+        "NEITHER": "0.797 [0.749, 0.839]",
+        "neither_bucket_leaddigit_matches_yP": "0.639 [0.577, 0.697]",
+        "n": 306
+      },
+      "SHUFFLED_control": {
+        "emits_y_prime_ADAPTED": "0.023 [0.011, 0.046]",
+        "emits_y_STALE": "0.003 [0.001, 0.018]",
+        "NEITHER": "0.974 [0.949, 0.987]",
+        "neither_bucket_leaddigit_matches_yP": "0.081 [0.055, 0.117]",
+        "n": 306
+      },
+      "NATIVE_no_graft": {
+        "emits_y_prime_ADAPTED": "0.003 [0.001, 0.018]",
+        "emits_y_STALE": "0.007 [0.002, 0.024]",
+        "NEITHER": "0.990 [0.972, 0.997]",
+        "neither_bucket_leaddigit_matches_yP": "0.356 [0.305, 0.412]",
+        "n": 306
+      }
+    },
+    "examples": [
+      {
+        "P": "10 * 38 + 98",
+        "y": 478,
+        "P_prime": "10 * 38 + 19",
+        "y_prime": 399,
+        "delta": -79,
+        "mismatch_first_tok": "'4'",
+        "matched_first_tok": "'3'"
+      },
+      {
+        "P": "3 * 28 + 72",
+        "y": 156,
+        "P_prime": "3 * 28 + 15",
+        "y_prime": 99,
+        "delta": -57,
+        "mismatch_first_tok": "'1'",
+        "matched_first_tok": "'9'"
+      },
+      {
+        "P": "23 * 34 + 55",
+        "y": 837,
+        "P_prime": "23 * 34 + 17",
+        "y_prime": 799,
+        "delta": -38,
+        "mismatch_first_tok": "'8'",
+        "matched_first_tok": "'8'"
+      },
+      {
+        "P": "34 * 14 + 39",
+        "y": 515,
+        "P_prime": "34 * 14 + 23",
+        "y_prime": 499,
+        "delta": -16,
+        "mismatch_first_tok": "'5'",
+        "matched_first_tok": "'5'"
+      },
+      {
+        "P": "20 * 39 + 64",
+        "y": 844,
+        "P_prime": "20 * 39 + 19",
+        "y_prime": 799,
+        "delta": -45,
+        "mismatch_first_tok": "'8'",
+        "matched_first_tok": "'8'"
+      },
+      {
+        "P": "34 * 10 + 67",
+        "y": 407,
+        "P_prime": "34 * 10 + 59",
+        "y_prime": 399,
+        "delta": -8,
+        "mismatch_first_tok": "'4'",
+        "matched_first_tok": "'4'"
+      },
+      {
+        "P": "19 * 17 + 35",
+        "y": 358,
+        "P_prime": "19 * 17 + 77",
+        "y_prime": 400,
+        "delta": 42,
+        "mismatch_first_tok": "'3'",
+        "matched_first_tok": "'4'"
+      },
+      {
+        "P": "9 * 3 + 40",
+        "y": 67,
+        "P_prime": "9 * 3 + 43",
+        "y_prime": 70,
+        "delta": 3,
+        "mismatch_first_tok": "'7'",
+        "matched_first_tok": "'7'"
+      }
+    ]
+  },
+  "B_shuffle_rescored": {
+    "_what": "shuffle RE-RUN with output capture: the recipient reads P' while the map is fed the donor state for an unrelated P. Does it emit y_P, the answer to a problem it never saw?",
+    "n_pairs_kept": 564,
+    "n_pairs_dropped_same_first_token": 70,
+    "first_token_is_donor_answer_y_P": "0.931 [0.907, 0.949]",
+    "full_generation_is_donor_answer_y_P": "0.005 [0.002, 0.016]",
+    "first_token_correct_for_Pprime": "0.014 [0.007, 0.028]",
+    "full_generation_correct_for_Pprime": "0.007 [0.003, 0.018]",
+    "empirical_null_draws": 20,
+    "null_first_token_match_mean": 0.2016,
+    "null_first_token_match_sd": 0.0163,
+    "null_full_match_mean": 0.0014,
+    "null_full_match_sd": 0.0017,
+    "EXCESS_first_token_over_null": 0.7293,
+    "EXCESS_full_over_null": 0.0039,
+    "excess_first_in_null_sds": 44.79,
+    "_null_note": "the null pairs each captured generation with a THIRD unrelated problem drawn from the same pool under the same first-token exclusion, so it absorbs the non-uniform (Benford-ish) leading-digit distribution.",
+    "_ref_base_shuffle_first": "0.109 [0.087, 0.135]",
+    "emitted_first_digit_histogram": {
+      "1": 207,
+      "2": 95,
+      "3": 43,
+      "4": 48,
+      "5": 36,
+      "6": 29,
+      "7": 48,
+      "8": 36,
+      "9": 21,
+      "null": 1
+    },
+    "gold_yP_first_digit_histogram": {
+      "1": 212,
+      "2": 89,
+      "3": 51,
+      "4": 41,
+      "5": 33,
+      "6": 37,
+      "7": 42,
+      "8": 33,
+      "9": 26
+    },
+    "examples": [
+      {
+        "P_donor": "4 * 20 + 84",
+        "y_P": 164,
+        "P_prime_read": "10 * 38 + 98",
+        "y_Pprime": 478,
+        "generated": "1000\n100"
+      },
+      {
+        "P_donor": "37 * 10 + 65",
+        "y_P": 435,
+        "P_prime_read": "22 * 3 + 3",
+        "y_Pprime": 69,
+        "generated": "45\n10 * 1"
+      },
+      {
+        "P_donor": "13 * 5 + 95",
+        "y_P": 160,
+        "P_prime_read": "26 * 15 + 55",
+        "y_Pprime": 445,
+        "generated": "1000\n100"
+      },
+      {
+        "P_donor": "35 * 30 + 68",
+        "y_P": 1118,
+        "P_prime_read": "16 * 31 + 38",
+        "y_Pprime": 534,
+        "generated": "100\n10 * "
+      },
+      {
+        "P_donor": "38 * 7 + 86",
+        "y_P": 352,
+        "P_prime_read": "3 * 28 + 72",
+        "y_Pprime": 156,
+        "generated": "300\n10 * "
+      },
+      {
+        "P_donor": "28 * 37 + 54",
+        "y_P": 1090,
+        "P_prime_read": "23 * 34 + 55",
+        "y_Pprime": 837,
+        "generated": "1000\n100"
+      },
+      {
+        "P_donor": "24 * 14 + 88",
+        "y_P": 424,
+        "P_prime_read": "34 * 14 + 39",
+        "y_Pprime": 515,
+        "generated": "403\n12 * "
+      },
+      {
+        "P_donor": "35 * 26 + 3",
+        "y_P": 913,
+        "P_prime_read": "20 * 39 + 64",
+        "y_Pprime": 844,
+        "generated": "924\n10 * "
+      }
+    ],
+    "_seed": "SINGLE SEED (task_maps[0]); the 5-seed spread for the same quantity is in RESULTS['arithmetic']['task_unsolv_full_per_seed']"
+  },
+  "C_unembedding_span": {
+    "_what": "ablate the recipient's own gain-scaled unembedding span for the observed answer tokens",
+    "answer_token_ids": [
+      235274,
+      235284,
+      235304,
+      235308,
+      235310,
+      235315,
+      235318,
+      235321,
+      235324
+    ],
+    "answer_tokens_decoded": [
+      "1",
+      "2",
+      "3",
+      "5",
+      "4",
+      "9",
+      "6",
+      "8",
+      "7"
+    ],
+    "n_answer_tokens": 9,
+    "basis_rank": 8,
+    "tied_input_output_embeddings": true,
+    "rmsnorm_gain_empirical_vs_1_plus_w_maxdiff": 4.8e-07,
+    "baseline_first": "0.904 [0.878, 0.924]",
+    "native_floor_first": 0.0,
+    "unembedding_ablated_first_ZERO": "0.662 [0.625, 0.698]",
+    "unembedding_ablated_first_MEAN": "0.677 [0.639, 0.712]",
+    "unembedding_ablated_full_ZERO": "0.082 [0.063, 0.106]",
+    "unembedding_ablated_full_MEAN": "0.082 [0.063, 0.106]",
+    "random_matched_rank_first_ZERO": "0.904 [0.903, 0.905]",
+    "random_matched_rank_first_MEAN": "0.904 [0.903, 0.905]",
+    "random_seeds": 20,
+    "_seed": "SINGLE SEED (task_maps[0]); the 5-seed spread for the same quantity is in RESULTS['arithmetic']['task_unsolv_full_per_seed']",
+    "inlp_first_8_dirs_first_ZERO": "0.885 [0.858, 0.907]",
+    "inlp_first_8_dirs_first_MEAN": "0.886 [0.859, 0.909]",
+    "principal_angles_B_vs_INLP_converged_deg": [
+      26.42,
+      28.07,
+      28.72,
+      30.11,
+      30.37,
+      33.52,
+      35.91,
+      36.9
+    ],
+    "containment_B_in_INLP_converged": 0.7291,
+    "containment_null_INLP": 0.2344,
+    "principal_angles_B_vs_INLP_first_8_deg": [
+      53.83,
+      57.93,
+      61.05,
+      62.12,
+      65.44,
+      66.62,
+      70.88,
+      73.59
+    ]
+  },
+  "D_sufficiency_split": {
+    "_what": "sufficiency: is the answer subspace ENOUGH on its own? proj_only is the new condition; comp_only IS the existing INLP ablation, reported for completeness.",
+    "mean_norm_f_h": 1686.094,
+    "mean_norm_native_recipient_state": 291.27,
+    "baseline_first": "0.904 [0.878, 0.924]",
+    "native_floor_first": 0.0,
+    "_seed": "SINGLE SEED (task_maps[0]); the 5-seed spread for the same quantity is in RESULTS['arithmetic']['task_unsolv_full_per_seed']",
+    "subspaces": {
+      "INLP_rank540": {
+        "rank": 540,
+        "mean_norm_projection": 1524.132,
+        "mean_norm_complement": 704.831,
+        "mean_energy_fraction_in_subspace": 0.8202,
+        "proj_only_natural__first": "0.896 [0.870, 0.917]",
+        "proj_only_rescaled__first": "0.888 [0.861, 0.910]",
+        "proj_meanfill_natural__first": "0.896 [0.870, 0.917]",
+        "proj_meanfill_rescaled__first": "0.885 [0.858, 0.907]",
+        "comp_only_natural__first": "0.202 [0.172, 0.235]",
+        "comp_only_rescaled__first": "0.167 [0.140, 0.198]",
+        "comp_meanfill_natural__first": "0.196 [0.167, 0.228]",
+        "comp_meanfill_rescaled__first": "0.139 [0.114, 0.168]",
+        "proj_only_natural__full": "0.110 [0.088, 0.137]",
+        "proj_meanfill_natural__full": "0.120 [0.097, 0.147]",
+        "comp_only_natural__full": "0.036 [0.024, 0.054]",
+        "comp_meanfill_natural__full": "0.038 [0.026, 0.056]",
+        "_note_comp_only_natural": "identical operation to the existing INLP zero-ablation; comp_meanfill_natural is its mean-ablation counterpart"
+      },
+      "INLP_rank360": {
+        "rank": 360,
+        "mean_norm_projection": 1365.737,
+        "mean_norm_complement": 963.412,
+        "mean_energy_fraction_in_subspace": 0.666,
+        "proj_only_natural__first": "0.826 [0.795, 0.854]",
+        "proj_only_rescaled__first": "0.828 [0.797, 0.855]",
+        "proj_meanfill_natural__first": "0.828 [0.797, 0.855]",
+        "proj_meanfill_rescaled__first": "0.833 [0.802, 0.860]",
+        "comp_only_natural__first": "0.219 [0.189, 0.253]",
+        "comp_only_rescaled__first": "0.129 [0.105, 0.158]",
+        "comp_meanfill_natural__first": "0.218 [0.187, 0.251]",
+        "comp_meanfill_rescaled__first": "0.123 [0.100, 0.151]",
+        "proj_only_natural__full": "0.110 [0.088, 0.137]",
+        "proj_meanfill_natural__full": "0.115 [0.093, 0.142]",
+        "comp_only_natural__full": "0.032 [0.021, 0.048]",
+        "comp_meanfill_natural__full": "0.038 [0.026, 0.056]",
+        "_note_comp_only_natural": "identical operation to the existing INLP zero-ablation; comp_meanfill_natural is its mean-ablation counterpart"
+      },
+      "UNEMB_rank8": {
+        "rank": 8,
+        "mean_norm_projection": 484.644,
+        "mean_norm_complement": 1612.808,
+        "mean_energy_fraction_in_subspace": 0.0855,
+        "proj_only_natural__first": "0.196 [0.167, 0.228]",
+        "proj_only_rescaled__first": "0.453 [0.414, 0.492]",
+        "proj_meanfill_natural__first": "0.338 [0.302, 0.375]",
+        "proj_meanfill_rescaled__first": "0.472 [0.433, 0.511]",
+        "comp_only_natural__first": "0.662 [0.625, 0.698]",
+        "comp_only_rescaled__first": "0.648 [0.610, 0.684]",
+        "comp_meanfill_natural__first": "0.677 [0.639, 0.712]",
+        "comp_meanfill_rescaled__first": "0.656 [0.618, 0.692]",
+        "proj_only_natural__full": "0.041 [0.028, 0.059]",
+        "proj_meanfill_natural__full": "0.058 [0.043, 0.079]",
+        "comp_only_natural__full": "0.082 [0.063, 0.106]",
+        "comp_meanfill_natural__full": "0.082 [0.063, 0.106]",
+        "_note_comp_only_natural": "identical operation to the existing INLP zero-ablation; comp_meanfill_natural is its mean-ablation counterpart"
+      }
+    },
+    "baseline_full": "0.128 [0.104, 0.156]"
+  },
+  "E_svd_ablation_containment": {
+    "_what": "remove the TOP-j directions the map writes into (complement of the existing rank-truncation sweep, which keeps them)",
+    "baseline_first": "0.904 [0.878, 0.924]",
+    "native_floor_first": 0.0,
+    "map_orientation": "code stores v = (h-mu9)@W_code + b with W_code (d_donor, d_recip); M = W_code.T; U = left singular vectors of M = recipient-space writes",
+    "singular_values_top32": [
+      14.3877,
+      13.63079,
+      12.2059,
+      11.01399,
+      10.58526,
+      10.16941,
+      9.71727,
+      9.3054,
+      8.98388,
+      8.74931,
+      8.63556,
+      7.9096,
+      7.74522,
+      7.28284,
+      6.96914,
+      6.79163,
+      6.48129,
+      6.31782,
+      6.27954,
+      5.89409,
+      5.80781,
+      5.68318,
+      5.56044,
+      5.43453,
+      5.38335,
+      5.35877,
+      5.29237,
+      5.13664,
+      4.9953,
+      4.84898,
+      4.77826,
+      4.70605
+    ],
+    "svd_ablation_curve": [
+      {
+        "j": 1,
+        "j_over_dmodel": 0.00043,
+        "svd_ablated_zero": 0.7066,
+        "svd_ablated_mean": 0.7082,
+        "random_ablated_zero_mean": 0.9038,
+        "random_ablated_zero_sd": 0.0011,
+        "spectrum_energy_fraction_in_top_j": 0.0597
+      },
+      {
+        "j": 2,
+        "j_over_dmodel": 0.00087,
+        "svd_ablated_zero": 0.3517,
+        "svd_ablated_mean": 0.3565,
+        "random_ablated_zero_mean": 0.9041,
+        "random_ablated_zero_sd": 0.0021,
+        "spectrum_energy_fraction_in_top_j": 0.1134
+      },
+      {
+        "j": 4,
+        "j_over_dmodel": 0.00174,
+        "svd_ablated_zero": 0.2697,
+        "svd_ablated_mean": 0.265,
+        "random_ablated_zero_mean": 0.9047,
+        "random_ablated_zero_sd": 0.0018,
+        "spectrum_energy_fraction_in_top_j": 0.1914
+      },
+      {
+        "j": 8,
+        "j_over_dmodel": 0.00347,
+        "svd_ablated_zero": 0.2224,
+        "svd_ablated_mean": 0.2224,
+        "random_ablated_zero_mean": 0.9035,
+        "random_ablated_zero_sd": 0.0013,
+        "spectrum_energy_fraction_in_top_j": 0.3058
+      },
+      {
+        "j": 16,
+        "j_over_dmodel": 0.00694,
+        "svd_ablated_zero": 0.1546,
+        "svd_ablated_mean": 0.1467,
+        "random_ablated_zero_mean": 0.905,
+        "random_ablated_zero_sd": 0.0028,
+        "spectrum_energy_fraction_in_top_j": 0.4507
+      },
+      {
+        "j": 32,
+        "j_over_dmodel": 0.01389,
+        "svd_ablated_zero": 0.1151,
+        "svd_ablated_mean": 0.0978,
+        "random_ablated_zero_mean": 0.9032,
+        "random_ablated_zero_sd": 0.0018,
+        "spectrum_energy_fraction_in_top_j": 0.5916
+      },
+      {
+        "j": 64,
+        "j_over_dmodel": 0.02778,
+        "svd_ablated_zero": 0.1309,
+        "svd_ablated_mean": 0.1104,
+        "random_ablated_zero_mean": 0.9028,
+        "random_ablated_zero_sd": 0.0014,
+        "spectrum_energy_fraction_in_top_j": 0.7236
+      },
+      {
+        "j": 128,
+        "j_over_dmodel": 0.05556,
+        "svd_ablated_zero": 0.1388,
+        "svd_ablated_mean": 0.1593,
+        "random_ablated_zero_mean": 0.9013,
+        "random_ablated_zero_sd": 0.0067,
+        "spectrum_energy_fraction_in_top_j": 0.8313
+      },
+      {
+        "j": 256,
+        "j_over_dmodel": 0.11111,
+        "svd_ablated_zero": 0.142,
+        "svd_ablated_mean": 0.1672,
+        "random_ablated_zero_mean": 0.8997,
+        "random_ablated_zero_sd": 0.0058,
+        "spectrum_energy_fraction_in_top_j": 0.9101
+      },
+      {
+        "j": 512,
+        "j_over_dmodel": 0.22222,
+        "svd_ablated_zero": 0.1041,
+        "svd_ablated_mean": 0.1798,
+        "random_ablated_zero_mean": 0.9054,
+        "random_ablated_zero_sd": 0.0052,
+        "spectrum_energy_fraction_in_top_j": 0.9622
+      }
+    ],
+    "random_seeds_per_j": 5,
+    "_seed": "SINGLE SEED (task_maps[0]); the 5-seed spread for the same quantity is in RESULTS['arithmetic']['task_unsolv_full_per_seed']",
+    "containment": {
+      "U8_in_UNEMB_rank8": {
+        "k": 8,
+        "target_dim": 8,
+        "containment_mean_cos2": 0.24516,
+        "analytic_null_target_dim_over_d": 0.00347,
+        "empirical_null_mean": 0.00328,
+        "empirical_null_ci": "0.003 [0.003, 0.003]",
+        "principal_angles_deg": [
+          42.4,
+          45.0,
+          47.0,
+          58.07,
+          66.54,
+          84.84,
+          86.98,
+          87.57
+        ],
+        "reverse_containment_target_in_Uk": 0.24516,
+        "reverse_analytic_null_k_over_d": 0.00347
+      },
+      "U16_in_UNEMB_rank8": {
+        "k": 16,
+        "target_dim": 8,
+        "containment_mean_cos2": 0.23964,
+        "analytic_null_target_dim_over_d": 0.00347,
+        "empirical_null_mean": 0.00355,
+        "empirical_null_ci": "0.004 [0.003, 0.004]",
+        "principal_angles_deg": [
+          38.55,
+          40.58,
+          40.99,
+          43.56,
+          44.94,
+          51.44,
+          54.26,
+          55.54
+        ],
+        "reverse_containment_target_in_Uk": 0.47928,
+        "reverse_analytic_null_k_over_d": 0.00694
+      },
+      "U32_in_UNEMB_rank8": {
+        "k": 32,
+        "target_dim": 8,
+        "containment_mean_cos2": 0.14243,
+        "analytic_null_target_dim_over_d": 0.00347,
+        "empirical_null_mean": 0.00339,
+        "empirical_null_ci": "0.003 [0.003, 0.004]",
+        "principal_angles_deg": [
+          34.83,
+          35.96,
+          37.86,
+          39.35,
+          39.64,
+          43.42,
+          47.42,
+          49.07
+        ],
+        "reverse_containment_target_in_Uk": 0.56972,
+        "reverse_analytic_null_k_over_d": 0.01389
+      },
+      "U8_in_INLP_rank540": {
+        "k": 8,
+        "target_dim": 540,
+        "containment_mean_cos2": 0.83285,
+        "analytic_null_target_dim_over_d": 0.23438,
+        "empirical_null_mean": 0.23297,
+        "empirical_null_ci": "0.233 [0.231, 0.235]",
+        "principal_angles_deg": [
+          5.55,
+          8.21,
+          10.89,
+          15.81,
+          18.77,
+          30.23,
+          37.21,
+          43.55
+        ],
+        "reverse_containment_target_in_Uk": 0.01234,
+        "reverse_analytic_null_k_over_d": 0.00347
+      },
+      "U16_in_INLP_rank540": {
+        "k": 16,
+        "target_dim": 540,
+        "containment_mean_cos2": 0.82167,
+        "analytic_null_target_dim_over_d": 0.23438,
+        "empirical_null_mean": 0.23359,
+        "empirical_null_ci": "0.234 [0.232, 0.235]",
+        "principal_angles_deg": [
+          1.78,
+          4.48,
+          7.84,
+          8.81,
+          10.58,
+          12.47,
+          13.66,
+          21.4,
+          23.64,
+          24.37,
+          29.5,
+          31.5,
+          35.62,
+          39.07,
+          41.91,
+          45.33
+        ],
+        "reverse_containment_target_in_Uk": 0.02435,
+        "reverse_analytic_null_k_over_d": 0.00694
+      },
+      "U32_in_INLP_rank540": {
+        "k": 32,
+        "target_dim": 540,
+        "containment_mean_cos2": 0.74105,
+        "analytic_null_target_dim_over_d": 0.23438,
+        "empirical_null_mean": 0.23398,
+        "empirical_null_ci": "0.234 [0.233, 0.235]",
+        "principal_angles_deg": [
+          0.0,
+          2.19,
+          3.83,
+          4.74,
+          5.21,
+          6.58,
+          7.78,
+          9.96,
+          11.59,
+          13.4,
+          16.99,
+          18.4,
+          19.93,
+          24.48,
+          28.05,
+          29.16,
+          30.06,
+          32.27,
+          32.72,
+          35.54,
+          36.62,
+          37.64,
+          39.55,
+          40.69,
+          43.18,
+          44.51,
+          46.14,
+          46.88,
+          48.7,
+          50.01,
+          52.48,
+          54.34
+        ],
+        "reverse_containment_target_in_Uk": 0.04391,
+        "reverse_analytic_null_k_over_d": 0.01389
+      },
+      "U8_in_INLP_rank360": {
+        "k": 8,
+        "target_dim": 360,
+        "containment_mean_cos2": 0.70147,
+        "analytic_null_target_dim_over_d": 0.15625,
+        "empirical_null_mean": 0.15471,
+        "empirical_null_ci": "0.155 [0.153, 0.156]",
+        "principal_angles_deg": [
+          8.62,
+          12.86,
+          17.91,
+          22.9,
+          26.81,
+          42.95,
+          55.46,
+          58.31
+        ],
+        "reverse_containment_target_in_Uk": 0.01559,
+        "reverse_analytic_null_k_over_d": 0.00347
+      },
+      "U16_in_INLP_rank360": {
+        "k": 16,
+        "target_dim": 360,
+        "containment_mean_cos2": 0.68102,
+        "analytic_null_target_dim_over_d": 0.15625,
+        "empirical_null_mean": 0.15574,
+        "empirical_null_ci": "0.156 [0.155, 0.157]",
+        "principal_angles_deg": [
+          4.72,
+          8.66,
+          11.18,
+          13.23,
+          14.6,
+          20.11,
+          20.79,
+          27.91,
+          35.75,
+          40.58,
+          42.25,
+          45.73,
+          48.33,
+          56.56,
+          58.97,
+          59.31
+        ],
+        "reverse_containment_target_in_Uk": 0.03027,
+        "reverse_analytic_null_k_over_d": 0.00694
+      },
+      "U32_in_INLP_rank360": {
+        "k": 32,
+        "target_dim": 360,
+        "containment_mean_cos2": 0.59678,
+        "analytic_null_target_dim_over_d": 0.15625,
+        "empirical_null_mean": 0.15577,
+        "empirical_null_ci": "0.156 [0.155, 0.157]",
+        "principal_angles_deg": [
+          3.22,
+          4.74,
+          6.53,
+          7.87,
+          8.55,
+          11.08,
+          12.67,
+          14.91,
+          16.16,
+          20.05,
+          25.98,
+          30.54,
+          34.62,
+          37.59,
+          38.65,
+          40.17,
+          41.82,
+          44.4,
+          46.62,
+          48.73,
+          50.35,
+          51.69,
+          53.21,
+          53.92,
+          56.02,
+          57.4,
+          57.96,
+          59.21,
+          60.33,
+          62.41,
+          63.92,
+          64.18
+        ],
+        "reverse_containment_target_in_Uk": 0.05305,
+        "reverse_analytic_null_k_over_d": 0.01389
+      }
+    },
+    "_containment_note": "LEAD with the UNEMB target: it is the recipient's own output head, fitted to nothing in this study. Its null is dim(B)/d.",
+    "overlay": {
+      "x_axis": "number of directions removed from f(h)",
+      "svd_ablation": [
+        {
+          "rank": 1,
+          "confer_zero": 0.7066,
+          "confer_mean": 0.7082
+        },
+        {
+          "rank": 2,
+          "confer_zero": 0.3517,
+          "confer_mean": 0.3565
+        },
+        {
+          "rank": 4,
+          "confer_zero": 0.2697,
+          "confer_mean": 0.265
+        },
+        {
+          "rank": 8,
+          "confer_zero": 0.2224,
+          "confer_mean": 0.2224
+        },
+        {
+          "rank": 16,
+          "confer_zero": 0.1546,
+          "confer_mean": 0.1467
+        },
+        {
+          "rank": 32,
+          "confer_zero": 0.1151,
+          "confer_mean": 0.0978
+        },
+        {
+          "rank": 64,
+          "confer_zero": 0.1309,
+          "confer_mean": 0.1104
+        },
+        {
+          "rank": 128,
+          "confer_zero": 0.1388,
+          "confer_mean": 0.1593
+        },
+        {
+          "rank": 256,
+          "confer_zero": 0.142,
+          "confer_mean": 0.1672
+        },
+        {
+          "rank": 512,
+          "confer_zero": 0.1041,
+          "confer_mean": 0.1798
+        }
+      ],
+      "random_ablation": [
+        {
+          "rank": 1,
+          "confer_zero": 0.9038,
+          "sd": 0.0011
+        },
+        {
+          "rank": 2,
+          "confer_zero": 0.9041,
+          "sd": 0.0021
+        },
+        {
+          "rank": 4,
+          "confer_zero": 0.9047,
+          "sd": 0.0018
+        },
+        {
+          "rank": 8,
+          "confer_zero": 0.9035,
+          "sd": 0.0013
+        },
+        {
+          "rank": 16,
+          "confer_zero": 0.905,
+          "sd": 0.0028
+        },
+        {
+          "rank": 32,
+          "confer_zero": 0.9032,
+          "sd": 0.0018
+        },
+        {
+          "rank": 64,
+          "confer_zero": 0.9028,
+          "sd": 0.0014
+        },
+        {
+          "rank": 128,
+          "confer_zero": 0.9013,
+          "sd": 0.0067
+        },
+        {
+          "rank": 256,
+          "confer_zero": 0.8997,
+          "sd": 0.0058
+        },
+        {
+          "rank": 512,
+          "confer_zero": 0.9054,
+          "sd": 0.0052
+        }
+      ],
+      "inlp_ablation": [
+        {
+          "rank": 36,
+          "confer_zero": 0.7476,
+          "confer_mean": 0.7571
+        },
+        {
+          "rank": 72,
+          "confer_zero": 0.5647,
+          "confer_mean": 0.5694
+        },
+        {
+          "rank": 108,
+          "confer_zero": 0.4795,
+          "confer_mean": 0.4984
+        },
+        {
+          "rank": 144,
+          "confer_zero": 0.4211,
+          "confer_mean": 0.4353
+        },
+        {
+          "rank": 180,
+          "confer_zero": 0.3959,
+          "confer_mean": 0.4117
+        },
+        {
+          "rank": 216,
+          "confer_zero": 0.3644,
+          "confer_mean": 0.3707
+        },
+        {
+          "rank": 252,
+          "confer_zero": 0.3344,
+          "confer_mean": 0.3454
+        },
+        {
+          "rank": 288,
+          "confer_zero": 0.2461,
+          "confer_mean": 0.2429
+        },
+        {
+          "rank": 324,
+          "confer_zero": 0.2287,
+          "confer_mean": 0.2319
+        },
+        {
+          "rank": 360,
+          "confer_zero": 0.2192,
+          "confer_mean": 0.2192
+        },
+        {
+          "rank": 396,
+          "confer_zero": 0.2461,
+          "confer_mean": 0.2319
+        },
+        {
+          "rank": 432,
+          "confer_zero": 0.2397,
+          "confer_mean": 0.2445
+        },
+        {
+          "rank": 468,
+          "confer_zero": 0.2366,
+          "confer_mean": 0.2445
+        },
+        {
+          "rank": 504,
+          "confer_zero": 0.2319,
+          "confer_mean": 0.2256
+        },
+        {
+          "rank": 540,
+          "confer_zero": 0.2003,
+          "confer_mean": 0.1972
+        }
+      ],
+      "unembedding_point": {
+        "rank": 8,
+        "confer_zero": "0.662 [0.625, 0.698]",
+        "confer_mean": "0.677 [0.639, 0.712]"
+      },
+      "baseline": 0.9038,
+      "native_floor": 0.0
+    }
+  },
+  "_meta": {
+    "notebook": "48GB_AnswerSubspace_followups.ipynb",
+    "donor": "google/gemma-2-9b",
+    "recipient": "google/gemma-2-2b",
+    "single_pair_recipientL_donorL": [
+      20,
+      34
+    ],
+    "d_recipient": 2304,
+    "d_donor": 3584,
+    "n_train": 3000,
+    "n_eval_donor_solved": 1693,
+    "n_unsolvable_bin": 634,
+    "task_map_seeds_trained": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "followups_use_seed": 0,
+    "smoke_test": false,
+    "flags": {
+      "RUN_CORE": true,
+      "RUN_INLP": true,
+      "RUN_A": true,
+      "RUN_B": true,
+      "RUN_C": true,
+      "RUN_D": true,
+      "RUN_E": true
+    },
+    "convention": "f(h) = W h + b is the vector WRITTEN into the recipient at L2_SINGLE; every ablation acts on that final affine output. Ablations are reported BOTH as zero-ablation and as mean-ablation against mu_native (the recipient's mean native L2_SINGLE state on the same problems). If they diverge, report the mean-ablation number.",
+    "single_seed_caveat": "SINGLE SEED (task_maps[0]); the 5-seed spread for the same quantity is in RESULTS['arithmetic']['task_unsolv_full_per_seed']"
+  }
+}
