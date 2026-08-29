@@ -1,0 +1,234 @@
+{
+  "setup": {
+    "donor": "meta-llama/Llama-3.1-8B",
+    "recipient": "google/gemma-2-2b",
+    "L_D": 17,
+    "L_R": 20,
+    "d_donor": 4096,
+    "d_recipient": 2304,
+    "n_train": 3000,
+    "n_eval_donor_solved": 297,
+    "n_unsolvable": 236,
+    "n_solvable": 61,
+    "donor_full_on_all_eval": "0.148 [0.134, 0.165]",
+    "recipient_native_full_donor_solved": "0.205 [0.163, 0.255]",
+    "recipient_native_lead_donor_solved": "0.566 [0.509, 0.621]",
+    "recipient_native_lead_on_unsolv": "0.453 [0.391, 0.517]",
+    "donor_leading_digit_probe_L17": "0.275 [0.210, 0.352]",
+    "_note": "all bins/metrics are decoded-answer based; no token id is compared across families"
+  },
+  "layer_derivation": {
+    "recipient_layer": 20,
+    "by_donor_layer": {
+      "L17": {
+        "donor_probe_leading_digit": "0.275 [0.210, 0.352]",
+        "task_confer_unsolv": {
+          "full": "0.195 [0.149, 0.250]",
+          "lead": "0.843 [0.791, 0.884]"
+        },
+        "final_batch_CE": 0.044
+      },
+      "L23": {
+        "donor_probe_leading_digit": "0.691 [0.613, 0.760]",
+        "task_confer_unsolv": {
+          "full": "0.263 [0.211, 0.322]",
+          "lead": "0.894 [0.848, 0.927]"
+        },
+        "final_batch_CE": 0.005
+      },
+      "L28": {
+        "donor_probe_leading_digit": "0.799 [0.727, 0.855]",
+        "task_confer_unsolv": {
+          "full": "0.174 [0.131, 0.227]",
+          "lead": "0.877 [0.829, 0.913]"
+        },
+        "final_batch_CE": 0.022
+      }
+    }
+  },
+  "arithmetic_core": {
+    "n_unsolv": 236,
+    "n_solv": 61,
+    "recon_cos_reconmap": "0.906 [0.900, 0.912]",
+    "recon_cos_taskmap": "0.824 [0.816, 0.832]",
+    "native_unsolv": {
+      "full": "0.000 [by construction]",
+      "lead": "0.453 [0.391, 0.517]"
+    },
+    "selfgraft_unsolv": {
+      "full": "0.000 [0.000, 0.016]",
+      "lead": "0.449 [0.387, 0.513]"
+    },
+    "recon_unsolv": {
+      "full": "0.059 [0.036, 0.097]",
+      "lead": "0.381 [0.322, 0.445]"
+    },
+    "task_unsolv_seed0": {
+      "full": "0.195 [0.149, 0.250]",
+      "lead": "0.843 [0.791, 0.884]"
+    },
+    "task_unsolv_full_acrossseed": "0.190 [0.157, 0.223]",
+    "task_unsolv_lead_acrossseed": "0.826 [0.811, 0.842]",
+    "shuffle_unsolv": {
+      "full": "0.008 [0.002, 0.030]",
+      "lead": "0.140 [0.101, 0.190]"
+    },
+    "recon_solv": {
+      "full": "0.361 [0.252, 0.486]",
+      "lead": "0.508 [0.386, 0.629]"
+    },
+    "task_solv": {
+      "full": "0.574 [0.449, 0.690]",
+      "lead": "0.787 [0.669, 0.871]"
+    },
+    "_read": "task >> shuffle => the stitch transfers donor-specific content. task ~= shuffle => the cross-family map only learned a generic task prior."
+  },
+  "freevec_ceiling": {
+    "n": 200,
+    "steps": 300,
+    "final_teacherforced_CE": 0.0001,
+    "ceiling": {
+      "full": "1.000 [0.981, 1.000]",
+      "lead": "1.000 [0.981, 1.000]"
+    },
+    "_ref_task_full": "0.190 [0.157, 0.223]",
+    "_ref_shuffle": {
+      "full": "0.008 [0.002, 0.030]",
+      "lead": "0.140 [0.101, 0.190]"
+    },
+    "_caveat": "teacher forcing gives the vector the gold prefix during training, so the free-gen number is a conservative read; it only makes a LOW ceiling more credible, not less."
+  },
+  "nonlinear_task_map": {
+    "mlp_unsolv": {
+      "full": "0.174 [0.131, 0.227]",
+      "lead": "0.839 [0.787, 0.880]"
+    },
+    "donor_probe_ceiling_at_L_D": "0.275 [0.210, 0.352]",
+    "_ref_linear_task_full": "0.190 [0.157, 0.223]",
+    "_ref_shuffle": {
+      "full": "0.008 [0.002, 0.030]",
+      "lead": "0.140 [0.101, 0.190]"
+    }
+  },
+  "transcription_probe": {
+    "n": 236,
+    "bin": "unsolvable",
+    "native_recipient_L20": "0.449 [0.362, 0.539]",
+    "recon_map_output": "0.297 [0.222, 0.384]",
+    "task_map_output_STITCHED": "0.254 [0.184, 0.340]",
+    "donor_L17_reference": "0.314 [0.237, 0.402]",
+    "_read": "native low + stitched ~= donor => the map transcribed the donor's answer; stitched ~= native => nothing about the answer crossed the family boundary."
+  },
+  "answer_ablation": {
+    "oneshot_rank_k": 9,
+    "oneshot_answer_ablated": {
+      "full": "0.208 [0.161, 0.264]",
+      "lead": "0.847 [0.796, 0.888]"
+    },
+    "oneshot_random_ablated": {
+      "full": "0.191 [0.146, 0.246]",
+      "lead": "0.852 [0.801, 0.891]"
+    },
+    "inlp_rounds": 60,
+    "inlp_rank": 540,
+    "inlp_answer_ablated": {
+      "full": "0.030 [0.014, 0.060]",
+      "lead": "0.258 [0.207, 0.318]"
+    },
+    "inlp_random_ablated_matched_rank": {
+      "full": "0.182 [0.138, 0.236]",
+      "lead": "0.809 [0.754, 0.854]"
+    },
+    "_ref_task_seed0": {
+      "full": "0.195 [0.149, 0.250]",
+      "lead": "0.843 [0.791, 0.884]"
+    },
+    "_ref_shuffle": {
+      "full": "0.008 [0.002, 0.030]",
+      "lead": "0.140 [0.101, 0.190]"
+    },
+    "_note_native": "native full-answer on the unsolvable bin is 0 by construction"
+  },
+  "symbolic_binding_chains": {
+    "task": "symbolic_binding_chains",
+    "labels": [
+      "red",
+      "blue",
+      "green",
+      "yellow",
+      "black",
+      "white",
+      "purple",
+      "silver",
+      "gold",
+      "brown"
+    ],
+    "layers": {
+      "donor": 17,
+      "recipient": 20
+    },
+    "train_n": 1500,
+    "eval_raw_n": 1050,
+    "eval_donor_solved_n": 700,
+    "unsolv_n": 355,
+    "native_all_donor_solved": "0.493 [0.456, 0.530]",
+    "by_depth": {
+      "depth1": {
+        "n_donor_solved": 304,
+        "n_unsolv": 162,
+        "native": "0.467 [0.412, 0.523]",
+        "donor_probe_label": "1.000 [0.975, 1.000]",
+        "native_recipient_probe_label": "0.625 [0.546, 0.698]",
+        "stitched_probe_label": "0.980 [0.944, 0.993]",
+        "recon_unsolv": "0.167 [0.117, 0.232]",
+        "task_unsolv": "0.994 [0.966, 0.999]",
+        "shuffle_unsolv": "0.099 [0.062, 0.154]"
+      },
+      "depth3": {
+        "n_donor_solved": 247,
+        "n_unsolv": 117,
+        "native": "0.526 [0.464, 0.588]",
+        "donor_probe_label": "0.831 [0.755, 0.886]",
+        "native_recipient_probe_label": "0.435 [0.351, 0.523]",
+        "stitched_probe_label": "0.750 [0.667, 0.818]",
+        "recon_unsolv": "0.248 [0.178, 0.333]",
+        "task_unsolv": "0.855 [0.780, 0.907]",
+        "shuffle_unsolv": "0.256 [0.186, 0.342]"
+      },
+      "depth5": {
+        "n_donor_solved": 149,
+        "n_unsolv": 76,
+        "native": "0.490 [0.411, 0.569]",
+        "donor_probe_label": "0.573 [0.461, 0.679]",
+        "native_recipient_probe_label": "0.480 [0.371, 0.591]",
+        "stitched_probe_label": "0.533 [0.422, 0.642]",
+        "recon_unsolv": "0.237 [0.155, 0.344]",
+        "task_unsolv": "0.539 [0.428, 0.647]",
+        "shuffle_unsolv": "0.250 [0.166, 0.358]"
+      }
+    },
+    "unsolv_all": {
+      "recon": "0.203 [0.164, 0.248]",
+      "task": "0.851 [0.810, 0.884]",
+      "shuffle": "0.135 [0.104, 0.175]",
+      "selfgraft": "0.020 [0.010, 0.040]"
+    }
+  },
+  "_config": {
+    "donor_arm": "llama",
+    "donor": "meta-llama/Llama-3.1-8B",
+    "recipient": "google/gemma-2-2b",
+    "L_D": 17,
+    "L_R": 20,
+    "smoke_test": false,
+    "task_seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "task_epochs": 6,
+    "scoring": "decoded-answer only (full-answer string + leading digit); no token id compared across families"
+  }
+}
