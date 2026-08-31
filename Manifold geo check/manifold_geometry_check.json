@@ -1,0 +1,502 @@
+{
+  "_config": {
+    "recipient": "google/gemma-2-2b",
+    "L_R": 20,
+    "arms": {
+      "gemma9b": {
+        "donor": "google/gemma-2-9b",
+        "L_D": 34,
+        "published_taskmap_cos": 0.197
+      },
+      "qwen7b": {
+        "donor": "Qwen/Qwen2.5-7B",
+        "L_D": 23,
+        "published_taskmap_cos": 0.253
+      },
+      "llama8b": {
+        "donor": "meta-llama/Llama-3.1-8B",
+        "L_D": 23,
+        "published_taskmap_cos": 0.808
+      }
+    },
+    "geom_seeds": [
+      0,
+      1
+    ],
+    "task_epochs": 6,
+    "extended_epochs": 6,
+    "extend_arms": [
+      "llama8b",
+      "gemma9b"
+    ],
+    "smoke_test": false
+  },
+  "gemma9b": {
+    "donor": "google/gemma-2-9b",
+    "L_D": 34,
+    "L_R": 20,
+    "n_donor_solved": 699,
+    "n_unsolvable": 604,
+    "published_taskmap_cos": 0.197,
+    "geometry": {
+      "recon": {
+        "cos_mean": 0.9784,
+        "cos_p10_p50_p90": [
+          0.9603,
+          0.9819,
+          0.993
+        ],
+        "norm_written_mean": 290.96,
+        "norm_native_mean": 296.22,
+        "norm_ratio_mean": 0.983,
+        "norm_ratio_p10_p50_p90": [
+          0.9474,
+          0.9869,
+          1.0141
+        ],
+        "z_dist_written": 0.929,
+        "z_dist_written_p10_p50_p90": [
+          0.7473,
+          0.8988,
+          1.1652
+        ],
+        "z_dist_native": 0.979,
+        "z_excess_over_native": 0.949,
+        "n": 604
+      },
+      "task": {
+        "cos_mean": 0.1577,
+        "cos_p10_p50_p90": [
+          0.0778,
+          0.1658,
+          0.2277
+        ],
+        "norm_written_mean": 2055.32,
+        "norm_native_mean": 296.22,
+        "norm_ratio_mean": 6.949,
+        "norm_ratio_p10_p50_p90": [
+          5.878,
+          6.8749,
+          8.1626
+        ],
+        "z_dist_written": 13.131,
+        "z_dist_written_p10_p50_p90": [
+          11.1704,
+          13.0271,
+          15.3147
+        ],
+        "z_dist_native": 0.979,
+        "z_excess_over_native": 13.409,
+        "n": 604
+      }
+    },
+    "per_seed_task_cos": [
+      0.1577,
+      0.1363
+    ],
+    "conferral": {
+      "recon": {
+        "lead": 0.5844
+      },
+      "task": {
+        "lead": 0.9354
+      }
+    },
+    "trajectory": [
+      {
+        "epoch": 1,
+        "ce": 0.3267,
+        "cos": 0.3175,
+        "norm_ratio": 3.373,
+        "z": 6.523,
+        "phase": "standard"
+      },
+      {
+        "epoch": 2,
+        "ce": 0.1915,
+        "cos": 0.2937,
+        "norm_ratio": 3.732,
+        "z": 7.234,
+        "phase": "standard"
+      },
+      {
+        "epoch": 3,
+        "ce": 0.1804,
+        "cos": 0.2669,
+        "norm_ratio": 4.118,
+        "z": 7.979,
+        "phase": "standard"
+      },
+      {
+        "epoch": 4,
+        "ce": 0.0923,
+        "cos": 0.2141,
+        "norm_ratio": 5.11,
+        "z": 9.736,
+        "phase": "standard"
+      },
+      {
+        "epoch": 5,
+        "ce": 0.0369,
+        "cos": 0.1975,
+        "norm_ratio": 5.583,
+        "z": 10.595,
+        "phase": "standard"
+      },
+      {
+        "epoch": 6,
+        "ce": 0.0269,
+        "cos": 0.1939,
+        "norm_ratio": 5.719,
+        "z": 10.87,
+        "phase": "standard"
+      },
+      {
+        "epoch": 7,
+        "ce": 0.0433,
+        "cos": 0.1709,
+        "norm_ratio": 6.508,
+        "z": 12.349,
+        "phase": "extended"
+      },
+      {
+        "epoch": 8,
+        "ce": 0.2546,
+        "cos": 0.1694,
+        "norm_ratio": 6.537,
+        "z": 12.358,
+        "phase": "extended"
+      },
+      {
+        "epoch": 9,
+        "ce": 0.0733,
+        "cos": 0.1699,
+        "norm_ratio": 6.437,
+        "z": 12.158,
+        "phase": "extended"
+      },
+      {
+        "epoch": 10,
+        "ce": 0.0709,
+        "cos": 0.1694,
+        "norm_ratio": 6.438,
+        "z": 12.173,
+        "phase": "extended"
+      },
+      {
+        "epoch": 11,
+        "ce": 0.1038,
+        "cos": 0.1573,
+        "norm_ratio": 7.031,
+        "z": 13.337,
+        "phase": "extended"
+      },
+      {
+        "epoch": 12,
+        "ce": 0.0028,
+        "cos": 0.1577,
+        "norm_ratio": 6.949,
+        "z": 13.131,
+        "phase": "extended"
+      }
+    ],
+    "extended_verdict": "cosine 0.1939 -> 0.1577 over 6 extra epochs (drop 0.0362). CONVERGED: the cosine is a real optimum, not undertraining.",
+    "epochs_run": 12
+  },
+  "qwen7b": {
+    "donor": "Qwen/Qwen2.5-7B",
+    "L_D": 23,
+    "L_R": 20,
+    "n_donor_solved": 508,
+    "n_unsolvable": 439,
+    "published_taskmap_cos": 0.253,
+    "geometry": {
+      "recon": {
+        "cos_mean": 0.9725,
+        "cos_p10_p50_p90": [
+          0.9495,
+          0.9771,
+          0.9899
+        ],
+        "norm_written_mean": 286.57,
+        "norm_native_mean": 295.33,
+        "norm_ratio_mean": 0.971,
+        "norm_ratio_p10_p50_p90": [
+          0.9284,
+          0.9744,
+          1.0078
+        ],
+        "z_dist_written": 0.891,
+        "z_dist_written_p10_p50_p90": [
+          0.709,
+          0.8655,
+          1.1352
+        ],
+        "z_dist_native": 0.978,
+        "z_excess_over_native": 0.911,
+        "n": 439
+      },
+      "task": {
+        "cos_mean": 0.2535,
+        "cos_p10_p50_p90": [
+          0.1926,
+          0.2518,
+          0.315
+        ],
+        "norm_written_mean": 1270.51,
+        "norm_native_mean": 295.33,
+        "norm_ratio_mean": 4.306,
+        "norm_ratio_p10_p50_p90": [
+          3.5012,
+          4.3193,
+          5.0941
+        ],
+        "z_dist_written": 8.297,
+        "z_dist_written_p10_p50_p90": [
+          6.6613,
+          8.31,
+          9.9991
+        ],
+        "z_dist_native": 0.978,
+        "z_excess_over_native": 8.487,
+        "n": 439
+      }
+    },
+    "per_seed_task_cos": [
+      0.2535,
+      0.2837
+    ],
+    "conferral": {
+      "recon": {
+        "lead": 0.5444
+      },
+      "task": {
+        "lead": 0.8155
+      }
+    },
+    "trajectory": [
+      {
+        "epoch": 1,
+        "ce": 0.5543,
+        "cos": 0.3961,
+        "norm_ratio": 2.56,
+        "z": 4.918,
+        "phase": "standard"
+      },
+      {
+        "epoch": 2,
+        "ce": 0.291,
+        "cos": 0.3503,
+        "norm_ratio": 2.994,
+        "z": 5.776,
+        "phase": "standard"
+      },
+      {
+        "epoch": 3,
+        "ce": 0.2153,
+        "cos": 0.2772,
+        "norm_ratio": 3.879,
+        "z": 7.496,
+        "phase": "standard"
+      },
+      {
+        "epoch": 4,
+        "ce": 0.5088,
+        "cos": 0.2582,
+        "norm_ratio": 4.189,
+        "z": 8.079,
+        "phase": "standard"
+      },
+      {
+        "epoch": 5,
+        "ce": 0.151,
+        "cos": 0.2581,
+        "norm_ratio": 4.268,
+        "z": 8.238,
+        "phase": "standard"
+      },
+      {
+        "epoch": 6,
+        "ce": 0.0422,
+        "cos": 0.2535,
+        "norm_ratio": 4.306,
+        "z": 8.297,
+        "phase": "standard"
+      }
+    ],
+    "extended_verdict": null,
+    "epochs_run": 6
+  },
+  "llama8b": {
+    "donor": "meta-llama/Llama-3.1-8B",
+    "L_D": 23,
+    "L_R": 20,
+    "n_donor_solved": 297,
+    "n_unsolvable": 236,
+    "published_taskmap_cos": 0.808,
+    "geometry": {
+      "recon": {
+        "cos_mean": 0.9325,
+        "cos_p10_p50_p90": [
+          0.8876,
+          0.9401,
+          0.9747
+        ],
+        "norm_written_mean": 264.07,
+        "norm_native_mean": 298.84,
+        "norm_ratio_mean": 0.886,
+        "norm_ratio_p10_p50_p90": [
+          0.8127,
+          0.8932,
+          0.9525
+        ],
+        "z_dist_written": 0.604,
+        "z_dist_written_p10_p50_p90": [
+          0.4816,
+          0.5866,
+          0.7469
+        ],
+        "z_dist_native": 0.979,
+        "z_excess_over_native": 0.617,
+        "n": 236
+      },
+      "task": {
+        "cos_mean": 0.7735,
+        "cos_p10_p50_p90": [
+          0.6936,
+          0.7812,
+          0.8423
+        ],
+        "norm_written_mean": 332.68,
+        "norm_native_mean": 298.84,
+        "norm_ratio_mean": 1.116,
+        "norm_ratio_p10_p50_p90": [
+          0.994,
+          1.0858,
+          1.2857
+        ],
+        "z_dist_written": 1.483,
+        "z_dist_written_p10_p50_p90": [
+          1.1537,
+          1.4224,
+          1.9168
+        ],
+        "z_dist_native": 0.979,
+        "z_excess_over_native": 1.514,
+        "n": 236
+      }
+    },
+    "per_seed_task_cos": [
+      0.7735,
+      0.7776
+    ],
+    "conferral": {
+      "recon": {
+        "lead": 0.572
+      },
+      "task": {
+        "lead": 0.8814
+      }
+    },
+    "trajectory": [
+      {
+        "epoch": 1,
+        "ce": 0.6216,
+        "cos": 0.8987,
+        "norm_ratio": 0.93,
+        "z": 0.818,
+        "phase": "standard"
+      },
+      {
+        "epoch": 2,
+        "ce": 0.1005,
+        "cos": 0.8763,
+        "norm_ratio": 0.958,
+        "z": 0.944,
+        "phase": "standard"
+      },
+      {
+        "epoch": 3,
+        "ce": 0.0273,
+        "cos": 0.8583,
+        "norm_ratio": 0.982,
+        "z": 1.041,
+        "phase": "standard"
+      },
+      {
+        "epoch": 4,
+        "ce": 0.1159,
+        "cos": 0.8429,
+        "norm_ratio": 1.004,
+        "z": 1.123,
+        "phase": "standard"
+      },
+      {
+        "epoch": 5,
+        "ce": 0.0092,
+        "cos": 0.8294,
+        "norm_ratio": 1.025,
+        "z": 1.198,
+        "phase": "standard"
+      },
+      {
+        "epoch": 6,
+        "ce": 0.0048,
+        "cos": 0.8189,
+        "norm_ratio": 1.04,
+        "z": 1.247,
+        "phase": "standard"
+      },
+      {
+        "epoch": 7,
+        "ce": 0.436,
+        "cos": 0.8069,
+        "norm_ratio": 1.059,
+        "z": 1.306,
+        "phase": "extended"
+      },
+      {
+        "epoch": 8,
+        "ce": 0.0139,
+        "cos": 0.7983,
+        "norm_ratio": 1.071,
+        "z": 1.352,
+        "phase": "extended"
+      },
+      {
+        "epoch": 9,
+        "ce": 0.0516,
+        "cos": 0.7903,
+        "norm_ratio": 1.086,
+        "z": 1.396,
+        "phase": "extended"
+      },
+      {
+        "epoch": 10,
+        "ce": 0.0015,
+        "cos": 0.7852,
+        "norm_ratio": 1.091,
+        "z": 1.415,
+        "phase": "extended"
+      },
+      {
+        "epoch": 11,
+        "ce": 1.2051,
+        "cos": 0.7792,
+        "norm_ratio": 1.103,
+        "z": 1.451,
+        "phase": "extended"
+      },
+      {
+        "epoch": 12,
+        "ce": 0.0025,
+        "cos": 0.7735,
+        "norm_ratio": 1.116,
+        "z": 1.483,
+        "phase": "extended"
+      }
+    ],
+    "extended_verdict": "cosine 0.8189 -> 0.7735 over 6 extra epochs (drop 0.0454). CONVERGED: the cosine is a real optimum, not undertraining.",
+    "epochs_run": 12
+  }
+}
