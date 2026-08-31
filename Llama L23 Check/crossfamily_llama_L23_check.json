@@ -1,0 +1,153 @@
+{
+  "setup": {
+    "donor": "meta-llama/Llama-3.1-8B",
+    "recipient": "google/gemma-2-2b",
+    "L_D": 23,
+    "L_R": 20,
+    "d_donor": 4096,
+    "d_recipient": 2304,
+    "n_train": 3000,
+    "n_eval_donor_solved": 297,
+    "n_unsolvable": 236,
+    "n_solvable": 61,
+    "donor_full_on_all_eval": "0.148 [0.134, 0.165]",
+    "recipient_native_full_donor_solved": "0.205 [0.163, 0.255]",
+    "recipient_native_lead_donor_solved": "0.566 [0.509, 0.621]",
+    "recipient_native_lead_on_unsolv": "0.453 [0.391, 0.517]",
+    "donor_leading_digit_probe_L23": "0.691 [0.613, 0.760]",
+    "_note": "all bins/metrics are decoded-answer based; no token id is compared across families"
+  },
+  "arithmetic_core": {
+    "n_unsolv": 236,
+    "n_solv": 61,
+    "recon_cos_reconmap": "0.925 [0.920, 0.930]",
+    "recon_cos_taskmap": "0.808 [0.801, 0.815]",
+    "native_unsolv": {
+      "full": "0.000 [by construction]",
+      "lead": "0.453 [0.391, 0.517]"
+    },
+    "selfgraft_unsolv": {
+      "full": "0.000 [0.000, 0.016]",
+      "lead": "0.449 [0.387, 0.513]"
+    },
+    "recon_unsolv": {
+      "full": "0.097 [0.066, 0.142]",
+      "lead": "0.572 [0.508, 0.634]"
+    },
+    "task_unsolv_seed0": {
+      "full": "0.263 [0.211, 0.322]",
+      "lead": "0.898 [0.853, 0.931]"
+    },
+    "task_unsolv_full_acrossseed": "0.241 [0.224, 0.257]",
+    "task_unsolv_lead_acrossseed": "0.886 [0.871, 0.900]",
+    "shuffle_unsolv": {
+      "full": "0.004 [0.001, 0.024]",
+      "lead": "0.119 [0.083, 0.166]"
+    },
+    "recon_solv": {
+      "full": "0.590 [0.465, 0.705]",
+      "lead": "0.721 [0.598, 0.818]"
+    },
+    "task_solv": {
+      "full": "0.672 [0.547, 0.777]",
+      "lead": "0.902 [0.802, 0.954]"
+    },
+    "_read": "task >> shuffle => the stitch transfers donor-specific content. task ~= shuffle => the cross-family map only learned a generic task prior.",
+    "taskmap_cos_by_seed": [
+      0.8076,
+      0.804,
+      0.8044,
+      0.8062,
+      0.8018
+    ],
+    "recon_cos_taskmap_unsolv": "0.819 [0.812, 0.826]",
+    "recon_cos_reconmap_unsolv": "0.933 [0.928, 0.937]",
+    "_cos_note": "recon_cos_* (unsuffixed) are over ALL donor-solved eval with the seed-0 task map -- identical recipe to the L17 run's 0.824, so directly comparable. *_unsolv restricts to the unsolvable bin."
+  },
+  "transcription_probe": {
+    "n": 236,
+    "bin": "unsolvable",
+    "native_recipient_L20": "0.449 [0.362, 0.539]",
+    "recon_map_output": "0.636 [0.546, 0.717]",
+    "task_map_output_STITCHED": "0.695 [0.607, 0.771]",
+    "donor_L23_reference": "0.720 [0.633, 0.793]",
+    "_read": "native low + stitched ~= donor => the map transcribed the donor's answer; stitched ~= native => nothing about the answer crossed the family boundary."
+  },
+  "l17_vs_l23": {
+    "L17_reference": {
+      "n_unsolv": 236,
+      "n_eval_donor_solved": 297,
+      "recon_cos_reconmap": "0.906 [0.900, 0.912]",
+      "recon_cos_taskmap": "0.824 [0.816, 0.832]",
+      "probe_native_L20": "0.449 [0.362, 0.539]",
+      "probe_recon_map": "0.297 [0.222, 0.384]",
+      "probe_stitched": "0.254 [0.184, 0.340]",
+      "probe_donor_LD": "0.314 [0.237, 0.402]",
+      "donor_probe_at_LD": "0.275 [0.210, 0.352]",
+      "native_unsolv_lead": "0.453 [0.391, 0.517]",
+      "selfgraft_full": "0.000 [0.000, 0.016]",
+      "selfgraft_lead": "0.449 [0.387, 0.513]",
+      "recon_full": "0.059 [0.036, 0.097]",
+      "recon_lead": "0.381 [0.322, 0.445]",
+      "task_seed0_full": "0.195 [0.149, 0.250]",
+      "task_seed0_lead": "0.843 [0.791, 0.884]",
+      "task_full_acrossseed": "0.190 [0.157, 0.223]",
+      "task_lead_acrossseed": "0.826 [0.811, 0.842]",
+      "shuffle_full": "0.008 [0.002, 0.030]",
+      "shuffle_lead": "0.140 [0.101, 0.190]"
+    },
+    "L17_donor_layer_sweep": {
+      "17": {
+        "donor_probe": "0.275 [0.210, 0.352]",
+        "full": "0.195 [0.149, 0.250]",
+        "lead": "0.843 [0.791, 0.884]"
+      },
+      "23": {
+        "donor_probe": "0.691 [0.613, 0.760]",
+        "full": "0.263 [0.211, 0.322]",
+        "lead": "0.894 [0.848, 0.927]"
+      },
+      "28": {
+        "donor_probe": "0.799 [0.727, 0.855]",
+        "full": "0.174 [0.131, 0.227]",
+        "lead": "0.877 [0.829, 0.913]"
+      }
+    },
+    "other_pairs_taskmap_cos": {
+      "gemma-2-9b -> gemma-2-2b": 0.197,
+      "Qwen2.5-7B -> gemma-2-2b": 0.253,
+      "instruction-tuned pair": 0.266
+    },
+    "anomaly_1_manifold": {
+      "L17_recon_cos_taskmap": "0.824 [0.816, 0.832]",
+      "L23_recon_cos_taskmap": "0.808 [0.801, 0.815]",
+      "verdict": "PERSISTS. At L23 the task map's cosine is still 0.808, far above the 0.20-0.27 band."
+    },
+    "anomaly_2_transcription": {
+      "L17_stitched": "0.254 [0.184, 0.340]",
+      "L17_native": "0.449 [0.362, 0.539]",
+      "L23_stitched": "0.695 [0.607, 0.771]",
+      "L23_native": "0.449 [0.362, 0.539]",
+      "verdict": "RESOLVED. Stitched 0.695 > native 0.449. The stitched vector now reads the answer BETTER than the"
+    }
+  },
+  "_config": {
+    "donor_arm": "llama",
+    "donor": "meta-llama/Llama-3.1-8B",
+    "recipient": "google/gemma-2-2b",
+    "L_D": 23,
+    "L_R": 20,
+    "smoke_test": false,
+    "task_seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "task_epochs": 6,
+    "purpose": "re-run of the completed L_D=17 cross-family pair at L_D=23 to test whether the on-manifold task map (recon_cos_taskmap=0.824) and the below-native stitched probe (0.254 vs 0.449) are real or artifacts of a donor layer where the answer is not linearly available",
+    "compare_against": "crossfamily_results_Llama-3.1-8B.json (the L_D=17 run)",
+    "scoring": "decoded-answer only (full-answer string + leading digit); no token id compared across families"
+  }
+}
