@@ -1,0 +1,74 @@
+{
+  "answer_bottleneck": {
+    "_what": "h_D -> FROZEN linear answer reader -> K scores -> LEARNED writer -> graft. The writer sees only the K scores. Tests whether answer content alone SUFFICES to reproduce conferral.",
+    "_bottleneck_width_note": "softmax scores are K-1 continuous coordinates, not a discrete label; only the gold one-hot condition is strictly discrete",
+    "K_classes": 9,
+    "scores_are_softmax": true,
+    "n_reader_train": 1500,
+    "n_writer_train": 1500,
+    "n_eval_bin": 638,
+    "n_eval_answers_outside_train_classes": 0,
+    "reader_acc_on_bin": "0.834 [0.803, 0.861]",
+    "bottleneck_pred_first": "0.832 [0.801, 0.859]",
+    "bottleneck_gold_first": "1.000 [0.994, 1.000]",
+    "bottleneck_gold_first_invocab": "same as above (no out-of-vocab answers)",
+    "bottleneck_uniform_first": "0.099 [0.078, 0.124]",
+    "bottleneck_shuffled_first": "0.017 [0.010, 0.031]",
+    "bottleneck_shuffled_emits_PARTNER_answer": "0.835 [0.805, 0.862]",
+    "bottleneck_pred_full": "0.100 [0.079, 0.126]",
+    "bottleneck_gold_full": "0.116 [0.093, 0.143]",
+    "_ref_task_first_FULL_data": "0.886 [0.859, 0.908]",
+    "_ref_task_first_MATCHED_data": "0.859 [0.830, 0.884]",
+    "_ref_task_full": "0.129 [0.105, 0.157]",
+    "_ref_recon_first": "0.191 [0.163, 0.224]",
+    "_ref_native_first": "0.000 [by construction]",
+    "recovery_vs_matched_task": 0.969,
+    "recovery_vs_full_task": 0.9398,
+    "_note_recovery": "compare against the MATCHED map: the full-data task map saw twice the training items the writer did, so the full-data ratio is confounded",
+    "_note_ceiling": "conferral is bounded by the reader: items the reader gets wrong can only be conferred by chance. Read bottleneck_pred_first against reader_acc_on_bin and against bottleneck_uniform_first (bias-only).",
+    "paired_task_vs_bottleneck": {
+      "task_only": 62,
+      "bottleneck_only": 28,
+      "mcnemar_p": 0.00043792219663413404
+    },
+    "shuffled_pairing": {
+      "n_pairs": 638,
+      "unavoidable_same_token": 0,
+      "_note": "derangement with distinct answer tokens; no fixed points"
+    }
+  },
+  "factual_recall": {
+    "_what": "naturalistic factual recall, same graft site and same bin rule as arithmetic: donor gets the first answer token right, recipient does not.",
+    "source": "facts.jsonl",
+    "n_raw_candidates": 8000,
+    "n_encoded": 8000,
+    "n_train": 4800,
+    "n_eval": 3200,
+    "optimizer_steps_per_map": 1800,
+    "donor_first_acc": 0.5222,
+    "recipient_first_acc": 0.4037,
+    "n_unsolv": 471,
+    "n_solv": 1200,
+    "native_first": "0.000 [by construction]",
+    "native_full": "0.146 [0.117, 0.181]",
+    "selfgraft_first": "0.011 [0.005, 0.025]",
+    "shuffle_first": "0.004 [0.001, 0.015]",
+    "recon_first": "0.251 [0.214, 0.292]",
+    "task_first_seed0": "0.146 [0.117, 0.181]",
+    "task_first_per_seed": [
+      0.1465,
+      0.1423,
+      0.1401,
+      0.155,
+      0.1529
+    ],
+    "task_first_acrossseed": "0.147 [0.139, 0.155]",
+    "recon_full": "0.306 [0.266, 0.349]",
+    "task_full_seed0": "0.151 [0.121, 0.186]",
+    "shuffled_pairing": {
+      "n_pairs": 471,
+      "unavoidable_same_token": 0
+    },
+    "_warn": ""
+  }
+}
