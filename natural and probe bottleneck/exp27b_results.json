@@ -1,0 +1,63 @@
+{
+  "factual_recall_v2": {
+    "_what": "naturalistic factual recall. BIN IS DEFINED ON THE DECODED FULL ANSWER for both models (same rule as the paper's cross-family arms), so native full-answer is 0 by construction and native FIRST-token is nonzero.",
+    "_fixes": [
+      "bin now full-answer defined (was first-token, which disagreed with the full-answer metric via tokenization non-determinism)",
+      "strict answer matching (was startswith: 'Au' matched 'Australia')",
+      "per-epoch loss + held-out conferral monitor",
+      "v3: low-rank residual on the recon init (rank 32), lr 0.0001, wd 0.01, singleton answer classes dropped from the CE loop only",
+      "epochs 4"
+    ],
+    "source": "facts.jsonl",
+    "n_encoded": 40000,
+    "n_train": 24000,
+    "n_eval": 3000,
+    "distinct_answer_tokens_in_train": 7252,
+    "examples_per_answer_class": 3.31,
+    "task_map_cfg": {
+      "rank": 32,
+      "lr": 0.0001,
+      "weight_decay": 0.01,
+      "min_class_count": 2,
+      "epochs": 4,
+      "max_steps": 3000,
+      "keep_best": true
+    },
+    "ce_train_items": 20348,
+    "ce_train_classes": 3600,
+    "ce_examples_per_class": 5.65,
+    "donor_full_acc": 0.6587,
+    "recipient_full_acc": 0.5017,
+    "n_unsolv": 570,
+    "n_solv": 1406,
+    "native_first": "0.065 [0.047, 0.088]",
+    "native_full": "0.000 [0.000, 0.007]",
+    "selfgraft_first": "0.061 [0.044, 0.084]",
+    "shuffle_first": "0.004 [0.001, 0.013]",
+    "_shuffle_note": "shuffle_first uses F_task_maps[0]; when that seed is the recon init this is the SAME computation as recon_SHUFFLED_first, so agreement between them is a consistency check, not two independent controls",
+    "recon_first": "0.326 [0.289, 0.366]",
+    "recon_SHUFFLED_first": "0.004 [0.001, 0.013]",
+    "_recon_shuffle_note": "if this is near native (0.06) the recon lift is problem-specific conferral; if it is near recon_first the lift is generic, i.e. writing any on-manifold vector repairs the recipient",
+    "task_best_step_per_seed": [
+      2000,
+      2500
+    ],
+    "task_is_recon_init_per_seed": [
+      false,
+      false
+    ],
+    "_task_warning": "some seeds improved on the recon init; see task_best_step_per_seed",
+    "task_first_seed0": "0.342 [0.304, 0.382]",
+    "task_first_per_seed": [
+      0.3421,
+      0.3526
+    ],
+    "task_first_acrossseed": "0.347 [0.280, 0.414]",
+    "recon_full": "0.342 [0.304, 0.382]",
+    "task_full_seed0": "0.323 [0.286, 0.362]",
+    "shuffled_pairing": {
+      "n_pairs": 570,
+      "unavoidable_same_token": 0
+    }
+  }
+}
