@@ -1,0 +1,269 @@
+{
+  "_what": "alpha blends the CONTEXT positions toward the recipient's own state; the final position is always fully grafted with the RAW (un-rescaled) vector. normmatch rescales only the context grafts to the norm the recipient natively had at that position -- direction untouched, cosine 1.0. alpha=0 reproduces the k=1 stitch; alpha=1 without normmatch reproduces plain k=all. Any row whose right_digit_count is far below native is measuring generation collapse, not conferral.",
+  "pair": "gemma",
+  "L_R": 13,
+  "L_D": 34,
+  "n_bin": 632,
+  "alphas": [
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "alpha0.25": {
+    "emitted_a_number": "1.000 [0.994, 1.000]",
+    "right_digit_count": "0.101 [0.080, 0.127]",
+    "first_digit_correct": "0.872 [0.844, 0.896]",
+    "full_answer_correct": "0.005 [0.002, 0.014]",
+    "mean_chars_emitted": 5.98,
+    "examples": [
+      "455555",
+      "65.555",
+      "455555",
+      "533333",
+      "1.1.1.",
+      "81,111",
+      "522222",
+      "81,111",
+      "81,1,1",
+      "200000"
+    ],
+    "gold_examples": [
+      "478",
+      "69",
+      "445",
+      "534",
+      "156",
+      "837",
+      "515",
+      "844",
+      "842",
+      "209"
+    ],
+    "first_token_conferral": "0.870 [0.842, 0.894]"
+  },
+  "alpha0.5": {
+    "emitted_a_number": "1.000 [0.994, 1.000]",
+    "right_digit_count": "0.040 [0.027, 0.058]",
+    "first_digit_correct": "0.870 [0.842, 0.894]",
+    "full_answer_correct": "0.002 [0.000, 0.009]",
+    "mean_chars_emitted": 6.0,
+    "examples": [
+      "444444",
+      "666666",
+      "444444",
+      "555555",
+      "111111",
+      "833333",
+      "555555",
+      "800000",
+      "855555",
+      "200000"
+    ],
+    "gold_examples": [
+      "478",
+      "69",
+      "445",
+      "534",
+      "156",
+      "837",
+      "515",
+      "844",
+      "842",
+      "209"
+    ],
+    "first_token_conferral": "0.870 [0.842, 0.894]"
+  },
+  "alpha0.75": {
+    "emitted_a_number": "1.000 [0.994, 1.000]",
+    "right_digit_count": "0.030 [0.019, 0.046]",
+    "first_digit_correct": "0.878 [0.850, 0.901]",
+    "full_answer_correct": "0.002 [0.000, 0.009]",
+    "mean_chars_emitted": 6.0,
+    "examples": [
+      "444444",
+      "666666",
+      "444444",
+      "555555",
+      "111111",
+      "857777",
+      "555555",
+      "888888",
+      "858585",
+      "202222"
+    ],
+    "gold_examples": [
+      "478",
+      "69",
+      "445",
+      "534",
+      "156",
+      "837",
+      "515",
+      "844",
+      "842",
+      "209"
+    ],
+    "first_token_conferral": "0.877 [0.849, 0.900]"
+  },
+  "alpha1.0": {
+    "emitted_a_number": "1.000 [0.994, 1.000]",
+    "right_digit_count": "0.024 [0.014, 0.039]",
+    "first_digit_correct": "0.878 [0.850, 0.901]",
+    "full_answer_correct": "0.002 [0.000, 0.009]",
+    "mean_chars_emitted": 6.0,
+    "examples": [
+      "444444",
+      "666666",
+      "444444",
+      "555555",
+      "111111",
+      "888888",
+      "555555",
+      "888888",
+      "888888",
+      "202222"
+    ],
+    "gold_examples": [
+      "478",
+      "69",
+      "445",
+      "534",
+      "156",
+      "837",
+      "515",
+      "844",
+      "842",
+      "209"
+    ],
+    "first_token_conferral": "0.878 [0.850, 0.901]"
+  },
+  "alpha0.25_normmatch": {
+    "emitted_a_number": "1.000 [0.994, 1.000]",
+    "right_digit_count": "0.780 [0.746, 0.811]",
+    "first_digit_correct": "0.872 [0.844, 0.896]",
+    "full_answer_correct": "0.024 [0.014, 0.039]",
+    "mean_chars_emitted": 6.2,
+    "examples": [
+      "480\n40",
+      "66\n10 *",
+      "455\n10",
+      "510\n10",
+      "1\n10 *",
+      "835\n10",
+      "514\n10",
+      "800\n10",
+      "800\n10",
+      "200\n12"
+    ],
+    "gold_examples": [
+      "478",
+      "69",
+      "445",
+      "534",
+      "156",
+      "837",
+      "515",
+      "844",
+      "842",
+      "209"
+    ],
+    "first_token_conferral": "0.869 [0.840, 0.893]"
+  },
+  "alpha0.5_normmatch": {
+    "emitted_a_number": "1.000 [0.994, 1.000]",
+    "right_digit_count": "0.301 [0.266, 0.337]",
+    "first_digit_correct": "0.872 [0.844, 0.896]",
+    "full_answer_correct": "0.011 [0.005, 0.023]",
+    "mean_chars_emitted": 5.99,
+    "examples": [
+      "404.39",
+      "66.666",
+      "455555",
+      "544444",
+      "111.11",
+      "845555",
+      "544444",
+      "800.\n4",
+      "854488",
+      "24.3.1"
+    ],
+    "gold_examples": [
+      "478",
+      "69",
+      "445",
+      "534",
+      "156",
+      "837",
+      "515",
+      "844",
+      "842",
+      "209"
+    ],
+    "first_token_conferral": "0.872 [0.844, 0.896]"
+  },
+  "alpha0.75_normmatch": {
+    "emitted_a_number": "0.973 [0.957, 0.983]",
+    "right_digit_count": "0.073 [0.055, 0.096]",
+    "first_digit_correct": "0.843 [0.813, 0.870]",
+    "full_answer_correct": "0.005 [0.002, 0.014]",
+    "mean_chars_emitted": 6.55,
+    "examples": [
+      "433343",
+      "643334",
+      "453375",
+      "543333",
+      "111111",
+      "\u05d5\u05d5\u05d9\u05e7, if all goes well",
+      "544444",
+      "DoubleQuotes.8588",
+      "843343",
+      "222222"
+    ],
+    "gold_examples": [
+      "478",
+      "69",
+      "445",
+      "534",
+      "156",
+      "837",
+      "515",
+      "844",
+      "842",
+      "209"
+    ],
+    "first_token_conferral": "0.829 [0.798, 0.856]"
+  },
+  "alpha1.0_normmatch": {
+    "emitted_a_number": "0.991 [0.979, 0.996]",
+    "right_digit_count": "0.071 [0.054, 0.094]",
+    "first_digit_correct": "0.859 [0.830, 0.884]",
+    "full_answer_correct": "0.003 [0.001, 0.011]",
+    "mean_chars_emitted": 6.25,
+    "examples": [
+      "433333",
+      "64.999",
+      "433333",
+      "533353",
+      "1.1111",
+      "853333",
+      "533333",
+      "875558",
+      "855555",
+      "203333"
+    ],
+    "gold_examples": [
+      "478",
+      "69",
+      "445",
+      "534",
+      "156",
+      "837",
+      "515",
+      "844",
+      "842",
+      "209"
+    ],
+    "first_token_conferral": "0.853 [0.823, 0.878]"
+  }
+}

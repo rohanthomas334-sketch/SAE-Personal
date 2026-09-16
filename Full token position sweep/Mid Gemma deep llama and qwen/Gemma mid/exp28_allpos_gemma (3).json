@@ -1,0 +1,54 @@
+{
+  "_config": {
+    "pair": "gemma",
+    "donor": "google/gemma-2-9b",
+    "recipient": "google/gemma-2-2b",
+    "L_R": 13,
+    "L_D": 34,
+    "n_train": 3000,
+    "n_eval": 2000,
+    "epochs": 2,
+    "seeds": [
+      0,
+      1
+    ],
+    "k_sweep": [
+      "1",
+      "2",
+      "4",
+      "8",
+      "16",
+      "all"
+    ]
+  },
+  "bins": {
+    "n_train": 3000,
+    "n_donor_solved": 1693,
+    "n_unsolvable": 632,
+    "n_solvable": 1061,
+    "recipient_native_rate_on_donor_solved": 0.6267
+  },
+  "_training_ce": {
+    "_what": "per-epoch MEAN training cross-entropy. Compare k1 vs kall: if kall plateaus well above k1 it did not converge in 2 epochs and its conferral is an underestimate. Raise TASK_EPOCHS and rerun cell 9 before believing a null.",
+    "k1": {
+      "seed0": [
+        0.5479,
+        0.243
+      ],
+      "seed1": [
+        0.5771,
+        0.2433
+      ]
+    },
+    "kall": {
+      "seed0": [
+        0.5351,
+        0.2552
+      ],
+      "seed1": [
+        0.5365,
+        0.2561
+      ]
+    }
+  }
+}
