@@ -1,0 +1,124 @@
+{
+  "_config": {
+    "pair": "qwen",
+    "donor": "Qwen/Qwen2.5-7B",
+    "recipient": "Qwen/Qwen2.5-0.5B",
+    "L_R": 18,
+    "L_D": 23,
+    "n_train": 3000,
+    "n_eval": 2000,
+    "epochs": 2,
+    "seeds": [
+      0,
+      1
+    ],
+    "k_sweep": [
+      "1",
+      "2",
+      "4",
+      "8",
+      "16",
+      "all"
+    ]
+  },
+  "bins": {
+    "n_train": 3000,
+    "n_donor_solved": 1681,
+    "n_unsolvable": 568,
+    "n_solvable": 1113,
+    "recipient_native_rate_on_donor_solved": 0.6621
+  },
+  "_training_ce": {
+    "_what": "per-epoch MEAN training cross-entropy. Compare k1 vs kall: if kall plateaus well above k1 it did not converge in 2 epochs and its conferral is an underestimate. Raise TASK_EPOCHS and rerun cell 9 before believing a null.",
+    "k1": {
+      "seed0": [
+        1.1509,
+        0.5005
+      ],
+      "seed1": [
+        1.2608,
+        0.5349
+      ]
+    },
+    "kall": {
+      "seed0": [
+        0.9702,
+        0.5204
+      ],
+      "seed1": [
+        0.9685,
+        0.5583
+      ]
+    }
+  },
+  "A_all_positions": {
+    "_what": "Graft the mapped donor state at the last k prompt positions at L_R (k=1 is the paper's stitch). The k-sweep uses the all-positions map evaluated with a narrower write mask; k=1_trained is the separately trained baseline. Shuffle is length-matched so positions stay aligned.",
+    "native_unsolv_full": "0.000 [0.000, 0.007]",
+    "k1_trained_first": "0.789 [0.753, 0.820]",
+    "k1_trained_full_acrossseed": "0.041 [0.030, 0.053]",
+    "k1_trained_full_seed0": "0.040 [0.027, 0.060]",
+    "kall_first": "0.789 [0.753, 0.820]",
+    "kall_full_acrossseed": "0.000 [0.000, 0.000]",
+    "kall_full_seed0": "0.000 [0.000, 0.007]",
+    "mcnemar_full_k1_vs_kall": {
+      "n01": 0,
+      "n10": 23,
+      "p": 2.384185791015625e-07
+    },
+    "mcnemar_first_k1_vs_kall": {
+      "n01": 16,
+      "n10": 16,
+      "p": 1.0
+    },
+    "k_sweep": {
+      "1": {
+        "first": "0.731 [0.693, 0.765]",
+        "full": "0.042 [0.029, 0.062]"
+      },
+      "2": {
+        "first": "0.780 [0.744, 0.812]",
+        "full": "0.004 [0.001, 0.013]"
+      },
+      "4": {
+        "first": "0.782 [0.746, 0.814]",
+        "full": "0.002 [0.000, 0.010]"
+      },
+      "8": {
+        "first": "0.780 [0.744, 0.812]",
+        "full": "0.002 [0.000, 0.010]"
+      },
+      "16": {
+        "first": "0.783 [0.748, 0.815]",
+        "full": "0.002 [0.000, 0.010]"
+      },
+      "all": {
+        "first": "0.789 [0.753, 0.820]",
+        "full": "0.000 [0.000, 0.007]"
+      }
+    },
+    "shuffle_n_fixed_points": 0,
+    "kall_shuffle_first": "0.259 [0.224, 0.296]",
+    "kall_shuffle_full": "0.000 [0.000, 0.007]",
+    "k1_shuffle_first": "0.250 [0.216, 0.287]",
+    "kall_solv_first": "0.844 [0.821, 0.864]",
+    "k1_solv_first": "0.856 [0.834, 0.876]"
+  },
+  "E_whole_answer": {
+    "_what": "Maps trained with cross-entropy over EVERY answer token rather than only the first, at k=1 and k=all. Scored with the same confer_first/confer_full as everything else, so these numbers sit beside EXP-A directly.",
+    "n_train_encoded": 3000,
+    "k1_ce": [
+      1.7527,
+      1.3786
+    ],
+    "k1_first": "0.794 [0.759, 0.825]",
+    "k1_full": "0.067 [0.049, 0.090]",
+    "kall_ce": [
+      1.7242,
+      1.3698
+    ],
+    "kall_first": "0.801 [0.766, 0.832]",
+    "kall_full": "0.060 [0.043, 0.082]",
+    "_ref_firsttok_k1_full": "0.040 [0.027, 0.060]",
+    "_ref_firsttok_kall_full": "0.000 [0.000, 0.007]"
+  }
+}

@@ -1,0 +1,237 @@
+{
+  "_what": "alpha blends the CONTEXT positions toward the recipient's own state; the final position is always fully grafted with the RAW (un-rescaled) vector. normmatch rescales only the context grafts to the norm the recipient natively had at that position -- direction untouched, cosine 1.0. alpha=0 reproduces the k=1 stitch; alpha=1 without normmatch reproduces plain k=all. Any row whose right_digit_count is far below native is measuring generation collapse, not conferral.",
+  "pair": "qwen",
+  "L_R": 18,
+  "L_D": 23,
+  "n_bin": 568,
+  "alphas": [
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "alpha0.25": {
+    "emitted_a_number": "1.000 [0.993, 1.000]",
+    "right_digit_count": "0.000 [0.000, 0.007]",
+    "first_digit_correct": "0.796 [0.761, 0.827]",
+    "full_answer_correct": "0.000 [0.000, 0.007]",
+    "mean_chars_emitted": 6.0,
+    "examples": [
+      "411100",
+      "610000",
+      "415010",
+      "210010",
+      "815010",
+      "511010",
+      "810010",
+      "211010",
+      "211000",
+      "111100"
+    ],
+    "gold_examples": [
+      "403",
+      "69",
+      "445",
+      "276",
+      "837",
+      "515",
+      "842",
+      "232",
+      "209",
+      "131"
+    ],
+    "first_token_conferral": "0.794 [0.759, 0.825]"
+  },
+  "alpha0.5": {
+    "emitted_a_number": "1.000 [0.993, 1.000]",
+    "right_digit_count": "0.000 [0.000, 0.007]",
+    "first_digit_correct": "0.790 [0.755, 0.822]",
+    "full_answer_correct": "0.000 [0.000, 0.007]",
+    "mean_chars_emitted": 6.0,
+    "examples": [
+      "411111",
+      "611001",
+      "411111",
+      "211210",
+      "811111",
+      "511111",
+      "810111",
+      "211111",
+      "211111",
+      "111111"
+    ],
+    "gold_examples": [
+      "403",
+      "69",
+      "445",
+      "276",
+      "837",
+      "515",
+      "842",
+      "232",
+      "209",
+      "131"
+    ],
+    "first_token_conferral": "0.792 [0.757, 0.824]"
+  },
+  "alpha0.75": {
+    "emitted_a_number": "1.000 [0.993, 1.000]",
+    "right_digit_count": "0.000 [0.000, 0.007]",
+    "first_digit_correct": "0.789 [0.753, 0.820]",
+    "full_answer_correct": "0.000 [0.000, 0.007]",
+    "mean_chars_emitted": 6.0,
+    "examples": [
+      "411111",
+      "611011",
+      "411111",
+      "211210",
+      "811111",
+      "511111",
+      "811111",
+      "211111",
+      "211111",
+      "111111"
+    ],
+    "gold_examples": [
+      "403",
+      "69",
+      "445",
+      "276",
+      "837",
+      "515",
+      "842",
+      "232",
+      "209",
+      "131"
+    ],
+    "first_token_conferral": "0.787 [0.751, 0.819]"
+  },
+  "alpha1.0": {
+    "emitted_a_number": "1.000 [0.993, 1.000]",
+    "right_digit_count": "0.000 [0.000, 0.007]",
+    "first_digit_correct": "0.787 [0.751, 0.819]",
+    "full_answer_correct": "0.000 [0.000, 0.007]",
+    "mean_chars_emitted": 6.0,
+    "examples": [
+      "411111",
+      "611111",
+      "411111",
+      "211211",
+      "811111",
+      "511111",
+      "811111",
+      "211111",
+      "211111",
+      "111111"
+    ],
+    "gold_examples": [
+      "403",
+      "69",
+      "445",
+      "276",
+      "837",
+      "515",
+      "842",
+      "232",
+      "209",
+      "131"
+    ],
+    "first_token_conferral": "0.789 [0.753, 0.820]"
+  },
+  "alpha0.25_normmatch": {
+    "emitted_a_number": "0.996 [0.987, 0.999]",
+    "right_digit_count": "0.815 [0.781, 0.845]",
+    "first_digit_correct": "0.799 [0.764, 0.830]",
+    "full_answer_correct": "0.039 [0.026, 0.058]",
+    "mean_chars_emitted": 6.27,
+    "examples": [
+      "401\n10",
+      "69\n10 *",
+      "405\n10",
+      "288\n10",
+      "895\n10",
+      "521\n10",
+      "900\n10",
+      "255\n10",
+      "208\n10",
+      "185\n10"
+    ],
+    "gold_examples": [
+      "403",
+      "69",
+      "445",
+      "276",
+      "837",
+      "515",
+      "842",
+      "232",
+      "209",
+      "131"
+    ],
+    "first_token_conferral": "0.782 [0.746, 0.814]"
+  },
+  "alpha0.5_normmatch": {
+    "emitted_a_number": "1.000 [0.993, 1.000]",
+    "right_digit_count": "0.220 [0.188, 0.256]",
+    "first_digit_correct": "0.801 [0.766, 0.832]",
+    "full_answer_correct": "0.012 [0.006, 0.025]",
+    "mean_chars_emitted": 6.02,
+    "examples": [
+      "411\n10",
+      "69\n100",
+      "415\n10",
+      "2000\n1",
+      "8950\n1",
+      "5010\n1",
+      "9000\n1",
+      "2102\n1",
+      "2810\n1",
+      "1000\n1"
+    ],
+    "gold_examples": [
+      "403",
+      "69",
+      "445",
+      "276",
+      "837",
+      "515",
+      "842",
+      "232",
+      "209",
+      "131"
+    ],
+    "first_token_conferral": "0.796 [0.761, 0.827]"
+  },
+  "alpha0.75_normmatch": {
+    "emitted_a_number": "1.000 [0.993, 1.000]",
+    "right_digit_count": "0.000 [0.000, 0.007]",
+    "first_digit_correct": "0.801 [0.766, 0.832]",
+    "full_answer_correct": "0.000 [0.000, 0.007]",
+    "mean_chars_emitted": 6.0,
+    "examples": [
+      "411000",
+      "610000",
+      "410000",
+      "210010",
+      "811000",
+      "511000",
+      "901000",
+      "211100",
+      "211000",
+      "111100"
+    ],
+    "gold_examples": [
+      "403",
+      "69",
+      "445",
+      "276",
+      "837",
+      "515",
+      "842",
+      "232",
+      "209",
+      "131"
+    ],
+    "first_token_conferral": "0.799 [0.764, 0.830]"
+  }
+}

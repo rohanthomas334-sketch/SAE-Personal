@@ -1,0 +1,104 @@
+{
+  "_what": "Looks at WHAT the recipient writes, not just whether it is right. A full-answer score of 0.000 has two incompatible explanations: the model is healthy but does not know the later digits (a result), or the graft broke its ability to emit a number at all (a bug). 'right_digit_count' separates them -- near 1.0 means healthy, near 0.0 means broken.",
+  "pair": "qwen",
+  "n_bin": 568,
+  "native": {
+    "emitted_a_number": "1.000 [0.993, 1.000]",
+    "right_digit_count": "0.731 [0.693, 0.765]",
+    "first_digit_correct": "0.002 [0.000, 0.010]",
+    "full_answer_correct": "0.000 [0.000, 0.007]",
+    "mean_chars_emitted": 6.19,
+    "examples": [
+      "399\n10",
+      "71\n10 *",
+      "395\n10",
+      "196\n10",
+      "795\n10",
+      "493\n10",
+      "7202\n1",
+      "180\n10",
+      "157\n10",
+      "375\n10"
+    ],
+    "gold_examples": [
+      "403",
+      "69",
+      "445",
+      "276",
+      "837",
+      "515",
+      "842",
+      "232",
+      "209",
+      "131"
+    ]
+  },
+  "k1": {
+    "emitted_a_number": "1.000 [0.993, 1.000]",
+    "right_digit_count": "0.894 [0.866, 0.917]",
+    "first_digit_correct": "0.790 [0.755, 0.822]",
+    "full_answer_correct": "0.040 [0.027, 0.060]",
+    "mean_chars_emitted": 6.15,
+    "examples": [
+      "343\n10",
+      "69\n10 *",
+      "455\n12",
+      "296\n10",
+      "895\n12",
+      "493\n10",
+      "800\n10",
+      "257\n10",
+      "207\n10",
+      "195\n10"
+    ],
+    "gold_examples": [
+      "403",
+      "69",
+      "445",
+      "276",
+      "837",
+      "515",
+      "842",
+      "232",
+      "209",
+      "131"
+    ]
+  },
+  "kall": {
+    "emitted_a_number": "1.000 [0.993, 1.000]",
+    "right_digit_count": "0.000 [0.000, 0.007]",
+    "first_digit_correct": "0.787 [0.751, 0.819]",
+    "full_answer_correct": "0.000 [0.000, 0.007]",
+    "mean_chars_emitted": 6.0,
+    "examples": [
+      "411111",
+      "611111",
+      "411111",
+      "211211",
+      "811111",
+      "511111",
+      "811111",
+      "211111",
+      "211111",
+      "111111"
+    ],
+    "gold_examples": [
+      "403",
+      "69",
+      "445",
+      "276",
+      "837",
+      "515",
+      "842",
+      "232",
+      "209",
+      "131"
+    ]
+  },
+  "procrustes_optimal_scale": {
+    "optimal_scale": 0.126664,
+    "donor_over_recipient_norm_ratio": 5.38,
+    "optscale_unsolv_first": "0.410 [0.370, 0.451]",
+    "optscale_unsolv_full": "0.016 [0.008, 0.030]"
+  }
+}
