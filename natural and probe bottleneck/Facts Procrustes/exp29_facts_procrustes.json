@@ -1,0 +1,165 @@
+{
+  "_config": {
+    "donor": "google/gemma-2-9b",
+    "recipient": "google/gemma-2-2b",
+    "L_D": 34,
+    "L_R": 20,
+    "train_frac": 0.6,
+    "max_eval": 3000,
+    "max_new": 12,
+    "fact_source": "facts (3).jsonl",
+    "fact_source_sha256": "bee764e4c5012ead26612de248358d6f1b4c30f2872f3e12f3f8457db474334f",
+    "fact_source_rows": 40000
+  },
+  "bins": {
+    "n_encoded": 40000,
+    "n_train": 24000,
+    "n_eval": 3000,
+    "n_unsolvable": 571,
+    "n_solvable": 1406,
+    "donor_solve_rate": 0.659,
+    "recipient_solve_rate": 0.5003,
+    "_published_reference": {
+      "n_unsolvable": 570,
+      "donor": 0.659,
+      "recipient": 0.502
+    }
+  },
+  "maps": {
+    "procrustes_optimal_scale": 0.555461,
+    "procrustes_normmatch_scale": 0.730118,
+    "donor_over_recipient_norm_ratio": 1.429,
+    "semiorthogonality_err": 2.384185791015625e-07,
+    "dims_discarded": 1280
+  },
+  "scores": {
+    "_what": "All maps scored on the SAME generation-defined unsolvable bin. Native full is 0 by construction; native first-token is not, and is reported. The task map is NOT retrained here -- compare against exp27_results.json, which is valid only if the bin above reproduced n=570.",
+    "native_first": "0.070 [0.052, 0.094]",
+    "native_full": "0.000 [0.000, 0.007]",
+    "recon_first": "0.324 [0.287, 0.363]",
+    "recon_full": "0.338 [0.300, 0.378]",
+    "recon_recon_cos": "0.894 [0.892, 0.897]",
+    "procrustes_optscale_first": "0.299 [0.263, 0.338]",
+    "procrustes_optscale_full": "0.331 [0.294, 0.371]",
+    "procrustes_optscale_recon_cos": "0.850 [0.848, 0.852]",
+    "procrustes_normmatch_first": "0.333 [0.295, 0.372]",
+    "procrustes_normmatch_full": "0.368 [0.329, 0.408]",
+    "procrustes_normmatch_recon_cos": "0.840 [0.837, 0.842]",
+    "procrustes_unscaled_first": "0.320 [0.284, 0.360]",
+    "procrustes_unscaled_full": "0.361 [0.322, 0.401]",
+    "procrustes_unscaled_recon_cos": "0.810 [0.808, 0.813]",
+    "recon_shuffled_first": "0.007 [0.003, 0.018]",
+    "procrustes_optscale_shuffled_first": "0.009 [0.004, 0.020]",
+    "mcnemar_first_recon_vs_procrustes": {
+      "n01": 36,
+      "n10": 50,
+      "p": 0.1605784191339798
+    },
+    "mcnemar_full_recon_vs_procrustes": {
+      "n01": 47,
+      "n10": 51,
+      "p": 0.7620362195292433
+    },
+    "_published_task_map_reference": {
+      "first": "0.351",
+      "full": "0.323",
+      "recon_first": "0.326",
+      "recon_full": "0.342",
+      "n": 570
+    }
+  },
+  "class_sweep": {
+    "_what": "Class-count sweep for the UNSUPERVISED maps, same design as factual_recall_classcount: fixed item budget, only class count varies, each K scored on its own eval subset. Compare delta_over_recon against the task map's delta from that experiment. Procrustes uses no labels, so a delta near zero at every K means the class-count effect is about supervised learning running out of examples per class, not about the representation or about the eval subsets getting easier.",
+    "n_fix": 4183,
+    "seed": 0,
+    "n_train_classes_total": 7252,
+    "_task_map_reference": {
+      "50": 0.213,
+      "200": -0.0055,
+      "800": 0.0526,
+      "3200": 0.0369
+    },
+    "sweep": [
+      {
+        "K": 50,
+        "train_items": 4183,
+        "train_classes": 50,
+        "examples_per_class": 83.66,
+        "eval_n": 106,
+        "recon_first": "0.387 [0.300, 0.482]",
+        "procrustes_optscale_first": "0.406 [0.317, 0.501]",
+        "procrustes_normmatch_first": "0.425 [0.335, 0.520]",
+        "delta_procrustes_optscale_minus_recon": 0.0189,
+        "delta_procrustes_normmatch_minus_recon": 0.0377,
+        "task_map_delta_from_exp27": 0.213,
+        "mcnemar_recon_vs_procrustes_normmatch": {
+          "n01": 13,
+          "n10": 9,
+          "p": 0.5234670639038086
+        },
+        "procrustes_optimal_scale": 0.593786,
+        "procrustes_normmatch_scale": 0.739205
+      },
+      {
+        "K": 200,
+        "train_items": 4183,
+        "train_classes": 200,
+        "examples_per_class": 20.91,
+        "eval_n": 181,
+        "recon_first": "0.348 [0.282, 0.420]",
+        "procrustes_optscale_first": "0.403 [0.335, 0.476]",
+        "procrustes_normmatch_first": "0.442 [0.372, 0.515]",
+        "delta_procrustes_optscale_minus_recon": 0.0552,
+        "delta_procrustes_normmatch_minus_recon": 0.0939,
+        "task_map_delta_from_exp27": -0.0055,
+        "mcnemar_recon_vs_procrustes_normmatch": {
+          "n01": 27,
+          "n10": 10,
+          "p": 0.007632078602910042
+        },
+        "procrustes_optimal_scale": 0.595512,
+        "procrustes_normmatch_scale": 0.729407
+      },
+      {
+        "K": 800,
+        "train_items": 4183,
+        "train_classes": 775,
+        "examples_per_class": 5.4,
+        "eval_n": 281,
+        "recon_first": "0.320 [0.268, 0.377]",
+        "procrustes_optscale_first": "0.352 [0.299, 0.410]",
+        "procrustes_normmatch_first": "0.356 [0.302, 0.413]",
+        "delta_procrustes_optscale_minus_recon": 0.032,
+        "delta_procrustes_normmatch_minus_recon": 0.0356,
+        "task_map_delta_from_exp27": 0.0526,
+        "mcnemar_recon_vs_procrustes_normmatch": {
+          "n01": 36,
+          "n10": 26,
+          "p": 0.2528543941881108
+        },
+        "procrustes_optimal_scale": 0.589023,
+        "procrustes_normmatch_scale": 0.722075
+      },
+      {
+        "K": 3200,
+        "train_items": 4183,
+        "train_classes": 1893,
+        "examples_per_class": 2.21,
+        "eval_n": 404,
+        "recon_first": "0.262 [0.222, 0.307]",
+        "procrustes_optscale_first": "0.314 [0.271, 0.361]",
+        "procrustes_normmatch_first": "0.319 [0.276, 0.366]",
+        "delta_procrustes_optscale_minus_recon": 0.052,
+        "delta_procrustes_normmatch_minus_recon": 0.0569,
+        "task_map_delta_from_exp27": 0.0369,
+        "mcnemar_recon_vs_procrustes_normmatch": {
+          "n01": 51,
+          "n10": 28,
+          "p": 0.012812402175831366
+        },
+        "procrustes_optimal_scale": 0.58654,
+        "procrustes_normmatch_scale": 0.722623
+      }
+    ]
+  }
+}

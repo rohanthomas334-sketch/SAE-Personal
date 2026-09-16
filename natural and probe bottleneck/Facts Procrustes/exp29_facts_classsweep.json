@@ -1,0 +1,94 @@
+{
+  "_what": "Class-count sweep for the UNSUPERVISED maps, same design as factual_recall_classcount: fixed item budget, only class count varies, each K scored on its own eval subset. Compare delta_over_recon against the task map's delta from that experiment. Procrustes uses no labels, so a delta near zero at every K means the class-count effect is about supervised learning running out of examples per class, not about the representation or about the eval subsets getting easier.",
+  "n_fix": 4183,
+  "seed": 0,
+  "n_train_classes_total": 7252,
+  "_task_map_reference": {
+    "50": 0.213,
+    "200": -0.0055,
+    "800": 0.0526,
+    "3200": 0.0369
+  },
+  "sweep": [
+    {
+      "K": 50,
+      "train_items": 4183,
+      "train_classes": 50,
+      "examples_per_class": 83.66,
+      "eval_n": 106,
+      "recon_first": "0.387 [0.300, 0.482]",
+      "procrustes_optscale_first": "0.406 [0.317, 0.501]",
+      "procrustes_normmatch_first": "0.425 [0.335, 0.520]",
+      "delta_procrustes_optscale_minus_recon": 0.0189,
+      "delta_procrustes_normmatch_minus_recon": 0.0377,
+      "task_map_delta_from_exp27": 0.213,
+      "mcnemar_recon_vs_procrustes_normmatch": {
+        "n01": 13,
+        "n10": 9,
+        "p": 0.5234670639038086
+      },
+      "procrustes_optimal_scale": 0.593786,
+      "procrustes_normmatch_scale": 0.739205
+    },
+    {
+      "K": 200,
+      "train_items": 4183,
+      "train_classes": 200,
+      "examples_per_class": 20.91,
+      "eval_n": 181,
+      "recon_first": "0.348 [0.282, 0.420]",
+      "procrustes_optscale_first": "0.403 [0.335, 0.476]",
+      "procrustes_normmatch_first": "0.442 [0.372, 0.515]",
+      "delta_procrustes_optscale_minus_recon": 0.0552,
+      "delta_procrustes_normmatch_minus_recon": 0.0939,
+      "task_map_delta_from_exp27": -0.0055,
+      "mcnemar_recon_vs_procrustes_normmatch": {
+        "n01": 27,
+        "n10": 10,
+        "p": 0.007632078602910042
+      },
+      "procrustes_optimal_scale": 0.595512,
+      "procrustes_normmatch_scale": 0.729407
+    },
+    {
+      "K": 800,
+      "train_items": 4183,
+      "train_classes": 775,
+      "examples_per_class": 5.4,
+      "eval_n": 281,
+      "recon_first": "0.320 [0.268, 0.377]",
+      "procrustes_optscale_first": "0.352 [0.299, 0.410]",
+      "procrustes_normmatch_first": "0.356 [0.302, 0.413]",
+      "delta_procrustes_optscale_minus_recon": 0.032,
+      "delta_procrustes_normmatch_minus_recon": 0.0356,
+      "task_map_delta_from_exp27": 0.0526,
+      "mcnemar_recon_vs_procrustes_normmatch": {
+        "n01": 36,
+        "n10": 26,
+        "p": 0.2528543941881108
+      },
+      "procrustes_optimal_scale": 0.589023,
+      "procrustes_normmatch_scale": 0.722075
+    },
+    {
+      "K": 3200,
+      "train_items": 4183,
+      "train_classes": 1893,
+      "examples_per_class": 2.21,
+      "eval_n": 404,
+      "recon_first": "0.262 [0.222, 0.307]",
+      "procrustes_optscale_first": "0.314 [0.271, 0.361]",
+      "procrustes_normmatch_first": "0.319 [0.276, 0.366]",
+      "delta_procrustes_optscale_minus_recon": 0.052,
+      "delta_procrustes_normmatch_minus_recon": 0.0569,
+      "task_map_delta_from_exp27": 0.0369,
+      "mcnemar_recon_vs_procrustes_normmatch": {
+        "n01": 51,
+        "n10": 28,
+        "p": 0.012812402175831366
+      },
+      "procrustes_optimal_scale": 0.58654,
+      "procrustes_normmatch_scale": 0.722623
+    }
+  ]
+}
