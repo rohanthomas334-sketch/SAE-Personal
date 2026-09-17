@@ -1,0 +1,220 @@
+{
+  "_config": {
+    "pair": "llama",
+    "donor": "meta-llama/Llama-3.1-8B",
+    "recipient": "meta-llama/Llama-3.2-1B",
+    "L_R": 11,
+    "L_D": 17,
+    "n_train": 3000,
+    "n_eval": 2000,
+    "epochs": 2,
+    "seeds": [
+      0,
+      1
+    ],
+    "k_sweep": [
+      "1",
+      "2",
+      "4",
+      "8",
+      "16",
+      "all"
+    ],
+    "arith_range": {
+      "a_hi": 30,
+      "b_hi": 30,
+      "c_hi": 40,
+      "ans_min": 100,
+      "ans_max": 999
+    },
+    "arith_space": 26283,
+    "n_train_10x": 18000
+  },
+  "bins": {
+    "n_train": 3000,
+    "n_donor_solved": 642,
+    "n_unsolvable": 626,
+    "n_solvable": 16,
+    "recipient_native_rate_on_donor_solved": 0.0249
+  },
+  "_training_ce": {
+    "_what": "per-epoch MEAN training cross-entropy. Compare k1 vs kall: if kall plateaus well above k1 it did not converge in 2 epochs and its conferral is an underestimate. Raise TASK_EPOCHS and rerun cell 9 before believing a null.",
+    "k1": {
+      "seed0": [
+        4.6765,
+        2.4077
+      ],
+      "seed1": [
+        4.7584,
+        2.5544
+      ]
+    },
+    "kall": {
+      "seed0": [
+        3.9481,
+        2.2784
+      ],
+      "seed1": [
+        4.0139,
+        2.3644
+      ]
+    }
+  },
+  "A_all_positions": {
+    "_what": "Graft the mapped donor state at the last k prompt positions at L_R (k=1 is the paper's stitch). The k-sweep uses the all-positions map evaluated with a narrower write mask; k=1_trained is the separately trained baseline. Shuffle is length-matched so positions stay aligned.",
+    "native_unsolv_full": "0.000 [0.000, 0.006]",
+    "k1_trained_first": "0.217 [0.187, 0.251]",
+    "k1_trained_full_acrossseed": "0.232 [0.049, 0.414]",
+    "k1_trained_full_seed0": "0.217 [0.187, 0.251]",
+    "kall_first": "0.265 [0.232, 0.301]",
+    "kall_full_acrossseed": "0.000 [0.000, 0.000]",
+    "kall_full_seed0": "0.000 [0.000, 0.006]",
+    "mcnemar_full_k1_vs_kall": {
+      "n01": 0,
+      "n10": 136,
+      "p": 2.2958874039497803e-41
+    },
+    "mcnemar_first_k1_vs_kall": {
+      "n01": 65,
+      "n10": 35,
+      "p": 0.0035176417229701583
+    },
+    "k_sweep": {
+      "1": {
+        "first": "0.126 [0.102, 0.155]",
+        "full": "0.128 [0.104, 0.156]"
+      },
+      "2": {
+        "first": "0.145 [0.120, 0.175]",
+        "full": "0.147 [0.121, 0.177]"
+      },
+      "4": {
+        "first": "0.157 [0.130, 0.187]",
+        "full": "0.158 [0.132, 0.189]"
+      },
+      "8": {
+        "first": "0.169 [0.142, 0.201]",
+        "full": "0.169 [0.142, 0.201]"
+      },
+      "16": {
+        "first": "0.195 [0.166, 0.228]",
+        "full": "0.188 [0.160, 0.221]"
+      },
+      "all": {
+        "first": "0.265 [0.232, 0.301]",
+        "full": "0.000 [0.000, 0.006]"
+      }
+    },
+    "shuffle_n_fixed_points": 0,
+    "kall_shuffle_first": "0.003 [0.001, 0.012]",
+    "kall_shuffle_full": "0.000 [0.000, 0.006]",
+    "k1_shuffle_first": "0.010 [0.004, 0.021]",
+    "kall_solv_first": "0.250 [0.102, 0.495]",
+    "k1_solv_first": "0.188 [0.066, 0.430]"
+  },
+  "B_procrustes": {
+    "_what": "Orthogonal Procrustes: R = U V^T from SVD(A^T B) on centered paired states. R has orthonormal columns (R^T R = I), so it applies NO SHRINKAGE: inside the d_recipient-dimensional subspace it keeps, inner products and distances are preserved exactly. Ridge does not do this -- it shrinks low-variance donor directions toward zero, which is where a low-variance answer signal would live. NOT lossless: mapping d_donor -> d_recipient discards a (d_donor - d_recipient)-dimensional subspace, so donor states that differ ONLY inside that discarded subspace do collapse together. Unsupervised -- fit on activations alone, no answer labels. This is the alignment-only baseline that the reconstruction map, by objective, cannot be.",
+    "semiorthogonality_err": 2.384185791015625e-07,
+    "norm_match_scale": 0.5463,
+    "unscaled_unsolv_first": "0.016 [0.009, 0.029]",
+    "unscaled_unsolv_full": "0.016 [0.009, 0.029]",
+    "unscaled_recon_cos": "0.919 [0.918, 0.921]",
+    "normmatched_unsolv_first": "0.026 [0.016, 0.041]",
+    "normmatched_unsolv_full": "0.026 [0.016, 0.041]",
+    "normmatched_recon_cos": "0.970 [0.969, 0.971]",
+    "_ref_recon_unsolv_first": "0.019 [0.011, 0.033]",
+    "_ref_recon_unsolv_full": "0.019 [0.011, 0.033]",
+    "_ref_task_unsolv_first": "0.217 [0.187, 0.251]"
+  },
+  "C_donor_inlp": {
+    "_what": "Iteratively null-project the first-digit directions out of the donor state h_d, then push the ABLATED donor state through the UNCHANGED task map. Control removes the same number of random donor directions. The map is frozen throughout; only its input changes.",
+    "curve": [
+      {
+        "rank": 9,
+        "donor_probe_acc_after": 0.825,
+        "confer_answer_erased": "0.091 [0.071, 0.116]",
+        "confer_random_erased": "0.217 [0.187, 0.251]"
+      },
+      {
+        "rank": 27,
+        "donor_probe_acc_after": 0.5487,
+        "confer_answer_erased": "0.056 [0.040, 0.077]",
+        "confer_random_erased": "0.214 [0.184, 0.248]"
+      },
+      {
+        "rank": 54,
+        "donor_probe_acc_after": 0.4283,
+        "confer_answer_erased": "0.034 [0.022, 0.051]",
+        "confer_random_erased": "0.217 [0.187, 0.251]"
+      },
+      {
+        "rank": 108,
+        "donor_probe_acc_after": 0.3523,
+        "confer_answer_erased": "0.030 [0.020, 0.047]",
+        "confer_random_erased": "0.212 [0.182, 0.246]"
+      },
+      {
+        "rank": 216,
+        "donor_probe_acc_after": 0.3217,
+        "confer_answer_erased": "0.010 [0.004, 0.021]",
+        "confer_random_erased": "0.228 [0.197, 0.263]"
+      },
+      {
+        "rank": 360,
+        "donor_probe_acc_after": 0.3237,
+        "confer_answer_erased": "0.003 [0.001, 0.012]",
+        "confer_random_erased": "0.230 [0.199, 0.265]"
+      },
+      {
+        "rank": 540,
+        "donor_probe_acc_after": 0.319,
+        "confer_answer_erased": "0.002 [0.000, 0.009]",
+        "confer_random_erased": "0.241 [0.209, 0.276]"
+      }
+    ],
+    "baseline_first": "0.217 [0.187, 0.251]",
+    "donor_probe_acc_unablated": 0.938
+  },
+  "D_data_10x": {
+    "_what": "k=1 task map trained on 18000 problems instead of 3000, scored on the same unsolvable bin as the 3k baseline in EXP-A. Tests whether Llama's low conferral is a data/class-count problem rather than a tokenizer one.",
+    "n_train_10x": 18000,
+    "ce_10x": {
+      "seed0": [
+        2.9734,
+        1.5806
+      ],
+      "seed1": [
+        2.9199,
+        1.5713
+      ]
+    },
+    "first_10x": "0.586 [0.547, 0.624]",
+    "full_10x_seed0": "0.586 [0.547, 0.624]",
+    "full_10x_acrossseed": "0.576 [0.444, 0.708]",
+    "_ref_first_3k": "0.217 [0.187, 0.251]",
+    "_ref_full_3k_seed0": "0.217 [0.187, 0.251]",
+    "mcnemar_first_3k_vs_10x": {
+      "n01": 264,
+      "n10": 33,
+      "p": 6.5008581316528224e-46
+    }
+  },
+  "E_whole_answer": {
+    "_what": "Maps trained with cross-entropy over EVERY answer token rather than only the first, at k=1 and k=all. Scored with the same confer_first/confer_full as everything else, so these numbers sit beside EXP-A directly.",
+    "n_train_encoded": 3000,
+    "k1_ce": [
+      4.6387,
+      2.4029
+    ],
+    "k1_first": "0.222 [0.191, 0.256]",
+    "k1_full": "0.222 [0.191, 0.256]",
+    "kall_ce": [
+      3.949,
+      2.2847
+    ],
+    "kall_first": "0.256 [0.223, 0.291]",
+    "kall_full": "0.000 [0.000, 0.006]",
+    "_ref_firsttok_k1_full": "0.217 [0.187, 0.251]",
+    "_ref_firsttok_kall_full": "0.000 [0.000, 0.006]"
+  }
+}
