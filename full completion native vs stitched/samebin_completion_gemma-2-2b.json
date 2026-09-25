@@ -1,0 +1,39 @@
+{
+  "n_solv": 1055,
+  "n_unsolv": 632,
+  "solvable_bin": {
+    "native": {
+      "first": "1.000 [0.996, 1.000]",
+      "full": "0.128 [0.109, 0.149]",
+      "completion_given_own_first": "0.128 [0.109, 0.149]",
+      "n_first_correct": 1055
+    },
+    "recon": {
+      "first": "0.924 [0.907, 0.939]",
+      "full": "0.118 [0.099, 0.138]",
+      "completion_given_own_first": "0.126 [0.107, 0.148]",
+      "n_first_correct": 975
+    },
+    "task": {
+      "first": "0.957 [0.943, 0.968]",
+      "full": "0.103 [0.086, 0.123]",
+      "completion_given_own_first": "0.108 [0.090, 0.129]",
+      "n_first_correct": 1010
+    }
+  },
+  "paired_native_vs_task": {
+    "n_paired": 1010,
+    "native_completes": "0.127 [0.108, 0.149]",
+    "task_completes": "0.108 [0.090, 0.129]",
+    "discordant_task_only": 44,
+    "discordant_native_only": 63,
+    "mcnemar_exact_p": 0.0814,
+    "_read": "same problems, same first-token condition, graft toggled"
+  },
+  "unsolvable_bin_task": {
+    "first": "0.886 [0.859, 0.909]",
+    "full": "0.128 [0.104, 0.156]",
+    "completion_given_own_first": "0.145 [0.118, 0.176]",
+    "n_first_correct": 560
+  }
+}
